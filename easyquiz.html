@@ -7,10 +7,21 @@
         </title>
         <header class="quiztitle">
             <a href="index.html" class="quiztitle">GeoWizard</a>
-            <span>Easy Flag quiz</span>
         </header>
     </head>
     <body>
-
+        <span class="quizhead">Easy Flag Quiz</span>
+        <div id="flags"></div>
+        <form id="guessbox">
+            <label for="guess">Which country is this?</label>
+            <input id="guess" type="text" required>
+            <input type="submit">
+        </form>
     </body>
+    <script>
+        let isEasy = true;
+        let isHard = false;
+        let isMedium = false;
+    </script>
+    <script src="script.js"></script>
 </html>
