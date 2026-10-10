@@ -151,6 +151,7 @@ body
 {
     text-align: center;
     font-size: large;
+    margin-bottom: 30px;
 }
 .logorow
 {
@@ -166,4 +167,17 @@ body
     margin: 0;
     text-decoration: none;
     color: white;
+}
+.quizhead
+{
+    font-size: larger;
+}
+#guessbox
+{
+    text-align: center;
+}
+.titles
+{
+    text-align: center;
+    font-size: xx-large;
 }
