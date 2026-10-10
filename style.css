@@ -1,0 +1,66 @@
+header
+{
+    background-color: black; 
+    color: white;
+    margin: 0;
+    font-size:xx-large
+    
+}
+#logo
+{
+    margin-right: 620px;
+    margin-left: 10px;
+}
+#statement1
+{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+body
+{
+    font-size: x-large;
+}
+#flagquizlink
+{
+    text-decoration: none;
+    color: white;
+}
+#flagpracticelink
+{
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+}
+#dailygamelink
+{
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+}
+#flagofUS
+{
+    border-image-width: 520px;
+    height: 260px;
+    margin-left: 10px;
+    margin-right: 30px
+}
+#flagofUK
+{
+    border-image-width: 520px;
+    height: 260px;
+    margin-left: 25px;
+    margin-right: 25px
+}
+#flagofFrance
+{
+    border-image-width: 520px;
+    height: 260px;
+    margin-left: 30px;
+    
+}
+body
+{
+    background-color: whitesmoke;
+    margin: 0;
+}
