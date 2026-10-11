@@ -1,96 +1,127 @@
 const easyflags = {
-    us: "unitedstates.png",
-    argentina: "https://flagsapi.com/AR/flat/64.png",
-    france: "france.png",
-    uk: "unitedkingdom.png",
-    ireland: "https://flagsapi.com/IE/flat/64.png",
-    russia: "https://flagsapi.com/RU/flat/64.png",
-    mexico: "https://flagsapi.com/MX/flat/64.png",
-    australia: "https://flagsapi.com/AU/flat/64.png",
-    brazil: "https://flagsapi.com/BR/flat/64.png",
-    germany: "https://flagsapi.com/DE/flat/64.png",
-    egypt: "https://flagsapi.com/EG/flat/64.png",
-    spain: "https://flagsapi.com/ES/flat/64.png",
-    greece: "https://flagsapi.com/GR/flat/64.png",
-    india: "https://flagsapi.com/IN/flat/64.png",
-    italy: "https://flagsapi.com/IT/flat/64.png",
-    japan: "https://flagsapi.com/JP/flat/64.png",
-    north_korea: "https://flagsapi.com/KP/flat/64.png",
-    south_korea: "https://flagsapi.com/KR/flat/64.png",
-    sweden: "https://flagsapi.com/SE/flat/64.png",
-    ukraine: "https://flagsapi.com/UA/flat/64.png",
+    US: "unitedstates.png",
+    Argentina: "argentina.png",
+    France: "france.png",
+    UK: "unitedkingdom.png",
+    Ireland: "ireland.png",
+    Russia: "russia.png",
+    Mexico: "mexico.png",
+    Australia: "australia.png",
+    Brazil: "brazil.png",
+    Germany: "germany.png",
+    Egypt: "egypt.png",
+    Spain: "spain.png",
+    Greece: "greece.png",
+    India: "https://static.vecteezy.com/system/resources/previews/016/591/159/original/national-flag-of-india-flat-color-icon-vector.jpg",
+    Italy: "https://tse4.mm.bing.net/th/id/OIP.NmgcZMzgaU9Hd8eVk6Ua4AHaE8?r=0&pid=Api&h=220&P=0",
+    Japan: "https://tse3.mm.bing.net/th/id/OIP.CQe2YZJTOcujPbi8F76ZIQHaEK?r=0&pid=Api&h=220&P=0",
+    North_Korea: "https://tse1.mm.bing.net/th/id/OIP.0N2AtyiejT2F4lRviwBnvgHaE7?r=0&pid=Api&h=220&P=0",
+    South_Korea: "https://tse2.mm.bing.net/th/id/OIP.P5kpQILueRwN9gSka3giwgHaE8?r=0&pid=Api&h=220&P=0",
+    Sweden: "https://tse4.mm.bing.net/th/id/OIP.qkUrMRc3ayMPvEb5wRNYVwHaE7?r=0&pid=Api&h=220&P=0",
+    Ukraine: "https://tse4.mm.bing.net/th/id/OIP.6yAVidk6vUfjLFPo-dnVbAHaE7?r=0&pid=Api&h=220&P=0",
 };
 
 const mediumflags = {
-    austria: "https://flagsapi.com/AT/flat/64.png",
-    belgium: "https://flagsapi.com/BE/flat/64.png",
-    antarctica: "https://flagsapi.com/AQ/flat/64.png",
-    uae: "https://flagsapi.com/AE/flat/64.png",
-    bahamas: "https://flagsapi.com/BS/flat/64.png",
-    chile: "https://flagsapi.com/CL/flat/64.png",
-    czechia: "https://flagsapi.com/CZ/flat/64.png",
-    ecuador: "https://flagsapi.com/EC/flat/64.png",
-    denmark: "https://flagsapi.com/DK/flat/64.png",
-    estonia: "https://flagsapi.com/EE/flat/64.png",
-    finland: "https://flagsapi.com/FI/flat/64.png",
-    georgia: "https://flagsapi.com/GE/flat/64.png",
-    ghana: "https://flagsapi.com/GH/flat/64.png",
-    guatemala: "https://flagsapi.com/GT/flat/64.png",
-    croatia: "https://flagsapi.com/HR/flat/64.png",
-    indonesia: "https://flagsapi.com/ID/flat/64.png",
-    haiti: "https://flagsapi.com/HT/flat/64.png",
-    iceland: "https://flagsapi.com/IS/flat/64.png",
-    iran: "https://flagsapi.com/IR/flat/64.png",
-    iraq: "https://flagsapi.com/IQ/flat/64.png",
-    jamaica: "https://flagsapi.com/JM/flat/64.png",
-    jordan: "https://flagsapi.com/JO/flat/64.png",
-    kenya: "https://flagsapi.com/KE/flat/64.png",
-    liechtenstein: "https://flagsapi.com/LI/flat/64.png",
-    lithuania: "https://flagsapi.com/LT/flat/64.png",
-    luxembourg: "https://flagsapi.com/LU/flat/64.png",
-    latvia: "https://flagsapi.com/LV/flat/64.png",
-    morocco: "https://flagsapi.com/MA/flat/64.png",
-    monaco: "https://flagsapi.com/MC/flat/64.png",
-    mongolia: "https://flagsapi.com/MN/flat/64.png",
-    malta: "https://flagsapi.com/MT/flat/64.png",
-    malaysia: "https://flagsapi.com/MY/flat/64.png",
-    niger: "https://flagsapi.com/NE/flat/64.png",
-    nigeria: "https://flagsapi.com/NG/flat/64.png",
-    nicaragua: "https://flagsapi.com/NI/flat/64.png",
-    netherlands: "https://flagsapi.com/NL/flat/64.png",
-    norway: "https://flagsapi.com/NO/flat/64.png",
-    nepal: "https://flagsapi.com/NP/flat/64.png",
-    new_zealand: "https://flagsapi.com/NZ/flat/64.png",
-    peru: "https://flagsapi.com/PE/flat/64.png",
-    philippines: "https://flagsapi.com/PH/flat/64.png",
-    pakistan: "https://flagsapi.com/PK/flat/64.png",
-    poland: "https://flagsapi.com/PL/flat/64.png",
-    puertorico: "https://flagsapi.com/PR/flat/64.png",
-    palestine: "https://flagsapi.com/PS/flat/64.png",
-    portugal: "https://flagsapi.com/PT/flat/64.png",
-    paraguay: "https://flagsapi.com/PY/flat/64.png",
-    romania: "https://flagsapi.com/RO/flat/64.png",
-    serbia: "https://flagsapi.com/RS/flat/64.png",
-    sudan: "https://flagsapi.com/SD/flat/64.png",
-    singapore: "https://flagsapi.com/SG/flat/64.png",
-    slovenia: "https://flagsapi.com/SI/flat/64.png",
-    slovakia: "https://flagsapi.com/SK/flat/64.png",
-    syria: "https://flagsapi.com/SY/flat/64.png",
-    thailand: "https://flagsapi.com/TH/flat/64.png",
-    turkmenistan: "https://flagsapi.com/TM/flat/64.png",
-    taiwan: "https://flagsapi.com/TW/flat/64.png",
-    uganda: "https://flagsapi.com/UG/flat/64.png",
-    venezuela: "https://flagsapi.com/VE/flat/64.png",
-    vietnam: "https://flagsapi.com/VN/flat/64.png",
-    yemen: "https://flagsapi.com/YE/flat/64.png",
-    south_africa: "https://flagsapi.com/ZA/flat/64.png",
+    Austria: "https://up.yimg.com/ib/th/id/OIP.jD9X6SvWv85UFfZEq6rSmwHaFK?pid=Api&rs=1&c=1&qlt=95&w=151&h=105",
+    Belgium: "https://i.pinimg.com/originals/1b/23/3f/1b233f2f6f4d3dfbf5d2ce6ea882ff99.png",
+    Antarctica: "https://tse4.mm.bing.net/th/id/OIP.-5Z2HA199gTiT8R_snEdpAHaEc?r=0&pid=Api&h=220&P=0",
+    UAE: "https://tse4.mm.bing.net/th/id/OIP.G-3ykFjR_WXiEgOdEET4PAHaE7?r=0&pid=Api&h=220&P=0",
+    Bahamas: "https://tse2.mm.bing.net/th/id/OIP.M2RFXlycJCqGkXGmDDRBxQHaDt?r=0&pid=Api&h=220&P=0",
+    Chile: "https://tse3.mm.bing.net/th/id/OIP.AfF2en4t_Gn0h9lsl0kO-wHaE8?r=0&pid=Api&h=220&P=0",
+    Czechia: "https://tse3.mm.bing.net/th/id/OIP.8pfceUXK1mWfDkitkj0B2QHaEW?r=0&pid=Api&h=220&P=0",
+    Ecuador: "https://tse3.mm.bing.net/th/id/OIP.ozi9j7YM5QFtof-vw9USpwHaE7?r=0&pid=Api&h=220&P=0",
+    Denmark: "https://tse4.mm.bing.net/th/id/OIP.ZhzMQ4HmN8bquGc640U3dQHaE7?r=0&pid=Api&h=220&P=0",
+    Estonia: "https://tse2.mm.bing.net/th/id/OIP.a0GNtwWvS1LlfwRQzyzGEAHaEK?r=0&pid=Api&h=220&P=0",
+    Finland: "https://tse3.mm.bing.net/th/id/OIP.jtgwr8DzWeyiNICWSjtxdgHaEK?r=0&pid=Api&h=220&P=0",
+    Georgia: "https://tse4.mm.bing.net/th/id/OIP.z7DL42cSGv7Udr5FR15ccAHaEK?r=0&pid=Api&h=220&P=0",
+    Ghana: "https://tse2.mm.bing.net/th/id/OIP.SwQllH0x_s8vFaKg7QxzKwHaEK?r=0&pid=Api&h=220&P=0",
+    Guatemala: "https://tse4.mm.bing.net/th/id/OIP.zUnls0Z1mITrUlKRbJ4E7QHaFj?r=0&pid=Api&h=220&P=0",
+    Croatia: "https://tse2.mm.bing.net/th/id/OIP.NX7E9Xh0qM4tPFlkUtUG6AHaDt?r=0&pid=Api&h=220&P=0",
+    Indonesia: "https://tse3.mm.bing.net/th/id/OIP.ElCOMqvy5nK0QHlAwZ5WowHaE7?r=0&pid=Api&h=220&P=0",
+    Haiti: "https://tse1.mm.bing.net/th/id/OIP.NU0FLFhbdSUo7tPglQuTjQHaEK?r=0&pid=Api&h=220&P=0",
+    Iceland: "https://tse1.mm.bing.net/th/id/OIP.OUM7VHS1SP4voKufZiLOdgHaEc?r=0&pid=Api&h=220&P=0",
+    Iran: "https://tse3.mm.bing.net/th/id/OIP.7caLiBaqQ39kPCMbZb3daAHaEO?r=0&pid=Api&h=220&P=0",
+    Iraq: "https://tse3.mm.bing.net/th/id/OIP.JadRPMlloO7gYr2SW80VKAHaEK?r=0&pid=Api&h=220&P=0",
+    Jamaica: "https://tse1.mm.bing.net/th/id/OIP.aGWsuFY3MAjbwAXmiYm7VAHaEK?r=0&pid=Api&h=220&P=0",
+    Jordan: "https://tse4.mm.bing.net/th/id/OIP.9IeYEQ2YxiWCidUeIgSexwHaEK?r=0&pid=Api&h=220&P=0",
+    Kenya: "https://tse4.mm.bing.net/th/id/OIP.4DPttAY0HBZYDoUDNVOMzwHaE7?r=0&pid=Api&h=220&P=0",
+    Liechtenstein: "https://tse3.mm.bing.net/th/id/OIP.qCBMWizh0q8njTeeNLkQHwHaEK?r=0&pid=Api&h=220&P=0",
+    Lithuania: "https://tse1.mm.bing.net/th/id/OIP.VC6zFptxKAkEcH8ZtD9jEgHaEK?r=0&pid=Api&h=220&P=0",
+    Luxembourg: "https://tse4.mm.bing.net/th/id/OIP.6ma5Nm5CiQTyZxoMXPcOJAHaEo?r=0&pid=Api&h=220&P=0",
+    Latvia: "https://tse4.mm.bing.net/th/id/OIP.KIvazwzjUUCojVOB__dS3AHaE7?r=0&pid=Api&h=220&P=0",
+    Morocco: "https://tse4.mm.bing.net/th/id/OIP.KTcaRM0I1VjA0i2cNIBg8gHaE7?r=0&pid=Api&h=220&P=0",
+    Monaco: "https://tse4.mm.bing.net/th/id/OIP.w9FZek-bDyMBf2bI4Vj6RwHaE8?r=0&pid=Api&h=220&P=0",
+    Mongolia: "https://tse3.mm.bing.net/th/id/OIP.nncUV_EvxJCSBM1NFX3qzAHaFj?r=0&pid=Api&h=220&P=0",
+    Malta: "https://tse1.mm.bing.net/th/id/OIP.k9yuSEf7tZNXazfnTAkTNQHaFJ?r=0&pid=Api&h=220&P=0",
+    Malaysia: "https://tse1.mm.bing.net/th/id/OIP.9VraLdYKQOcohUZZ9UN5lQHaDt?r=0&pid=Api&h=220&P=0",
+    Niger: "https://tse3.mm.bing.net/th/id/OIP.ksES8OLxS3MT2AsPiyjBhgHaE7?r=0&pid=Api&h=220&P=0",
+    Nigeria: "https://tse2.mm.bing.net/th/id/OIP.jEwzU1sIqeltF3HHff5xxQHaE8?r=0&pid=Api&h=220&P=0",
+    Nicaragua: "https://tse2.mm.bing.net/th/id/OIP.4oMXlYYlYqvnaHKoIN4lGAHaEK?r=0&pid=Api&h=220&P=0",
+    Netherlands: "https://tse2.mm.bing.net/th/id/OIP.3K7R7kS2RPjxaimAe6XtIwHaE8?r=0&pid=Api&h=220&P=0",
+    Norway: "https://tse4.mm.bing.net/th/id/OIP.7KEzmCKJfoOioY5KHEs2vQHaEK?r=0&pid=Api&h=220&P=0",
+    Nepal: "https://tse4.mm.bing.net/th/id/OIP.asHwn5c3qxOSdzlbhS92YwHaHa?r=0&pid=Api&h=220&P=0",
+    New_Zealand: "https://tse1.mm.bing.net/th/id/OIP.zW1Txizsp5eFM9Acle0DcQHaDt?r=0&pid=Api&h=220&P=0",
+    Peru: "https://tse1.mm.bing.net/th/id/OIP.lWGH24e-bfR5EgGAYWdwdgHaEo?r=0&pid=Api&h=220&P=0",
+    Philippines: "https://tse2.mm.bing.net/th/id/OIP.eCvHPkxnjbmhKouSiEXMvQHaEK?r=0&pid=Api&h=220&P=0",
+    Pakistan: "https://cdn.pixabay.com/photo/2015/01/14/22/42/pakistan-599684_1280.png",
+    Poland: "https://tse1.mm.bing.net/th/id/OIP.9KQkJsY-FvBlc59pdyKVVgHaEo?r=0&pid=Api&h=220&P=0",
+    Puerto_Rico: "https://tse2.mm.bing.net/th/id/OIP.MS5ekQMU6f_kjvxVSAIrKAHaE8?r=0&pid=Api&h=220&P=0",
+    Palestine: "https://tse4.mm.bing.net/th/id/OIP.nueNU-FHb-iYI0pJJPQbzwHaEK?r=0&pid=Api&h=220&P=0",
+    Portugal: "https://tse3.mm.bing.net/th/id/OIP.9LYt4LKisZ4EuQfgrfE6ewHaE8?r=0&pid=Api&h=220&P=0",
+    Paraguay: "https://tse1.mm.bing.net/th/id/OIP.2bR5-F41nVmBBA0mmkLfggHaD5?r=0&pid=Api&h=220&P=0",
+    Romania: "https://tse3.mm.bing.net/th/id/OIP.yGRJPrAjonm27rdfwnP31gHaE8?r=0&pid=Api&h=220&P=0",
+    Serbia: "https://www.citypng.com/public/uploads/preview/hd-serbia-national-flag-png-11656557239bvfyz8u5je.png",
+    Sudan: "https://tse2.mm.bing.net/th/id/OIP.b2odtSdaoNO5JBdKvxukFwHaE7?r=0&pid=Api&h=220&P=0",
+    Singapore: "https://tse4.mm.bing.net/th/id/OIP.o1ipaicggZNI0RSst3vqJgHaEo?r=0&pid=Api&h=220&P=0",
+    Slovenia: "https://tse4.mm.bing.net/th/id/OIP.UT5Y43L_I0KxXhIUk8vccAHaEF?r=0&pid=Api&h=220&P=0",
+    Slovakia: "https://tse2.mm.bing.net/th/id/OIP.J61VKtGRdshJisPrf63uTwHaE8?r=0&pid=Api&h=220&P=0",
+    Syria: "https://tse1.mm.bing.net/th/id/OIP.znvbCnFsw1QMQ6ui_hl7MAHaEu?r=0&pid=Api&h=220&P=0",
+    Thailand: "https://tse1.mm.bing.net/th/id/OIP.9NZzrOEqH7UPqP7QO4J18AHaE8?r=0&pid=Api&h=220&P=0",
+    Turkmenistan: "https://tse3.mm.bing.net/th/id/OIP.j_rkbq9C1myfUApi9vWUlAHaEC?r=0&pid=Api&h=220&P=0",
+    Taiwan: "https://tse3.mm.bing.net/th/id/OIP.CEIzkm4c8sPNiF5oookeuAHaEj?r=0&pid=Api&h=220&P=0",
+    Uganda: "https://tse2.mm.bing.net/th/id/OIP.gw5hq4XfPjg7bX_6fjkYWgHaE8?r=0&pid=Api&h=220&P=0",
+    Venezuela: "https://tse1.mm.bing.net/th/id/OIP.9alWhV3SBLXPmg6rBqmqXgHaEK?r=0&pid=Api&h=220&P=0",
+    Vietnam: "https://pixnio.com/free-images/flags-of-the-world/flag-of-vietnam.jpg",
+    Yemen: "https://tse1.mm.bing.net/th/id/OIP.ZcluVYmASaZxLRncsWkGogHaD7?r=0&pid=Api&h=220&P=0",
+    South_africa: "https://tse1.mm.bing.net/th/id/OIP.f8A9gVe_etPVSePCSoI7xQHaE8?r=0&pid=Api&h=220&P=0",
 };
 const hardflags = {
-    venezuela: "https://flagsapi.com/VE/flat/64.png",
-    vietnam: "https://flagsapi.com/VN/flat/64.png",
-    yemen: "https://flagsapi.com/YE/flat/64.png",
-    south_africa: "https://flagsapi.com/ZA/flat/64.png",
+    Democratic_Republic_of_Congo: "https://www.countryflags.com/flag-of-congo-democratic-republic-of-the/",
+    Tanzania: "https://www.countryflags.com/countryflags-file/countryflags/tanzania/flag-webp-xs.webp?v=6aa82285-652",
+    Angola: "https://www.countryflags.com/flag-of-angola/",
+    Mozambique: "https://www.countryflags.com/countryflags-file/countryflags/mozambique/flag-webp-xs.webp?v=6aa82293-1572",
+    Ivory_Coast: "https://www.countryflags.com/countryflags-file/countryflags/ivoorkust/flag-png-medium.png?v=6aa1aa62-efa",
+    Cameroon: "https://www.countryflags.com/countryflags-file/countryflags/kameroen/flag-webp-xs.webp?v=6aa82294-2f0",
+    Mali: "https://www.countryflags.com/countryflags-file/countryflags/mali/flag-webp-xs.webp?v=6aa82298-74",
+    Malawi: "https://www.countryflags.com/countryflags-file/countryflags/malawi/flag-webp-xs.webp?v=6aa8350c-df6",
+    Zambia: "https://www.countryflags.com/countryflags-file/countryflags/zambia/flag-webp-xs.webp?v=6aa8350c-a8e",
+    Guinea: "https://www.countryflags.com/countryflags-file/countryflags/guinee/flag-webp-xs.webp?v=6aa82298-74",
+    Namibia: "https://www.countryflags.com/countryflags-file/countryflags/namibie/flag-webp-xs.webp?v=6aa822b5-ffc",
+    Gambia: "https://www.countryflags.com/countryflags-file/countryflags/gambia/flag-webp-xs.webp?v=6aa83585-a2",
+    Guinea_bissau: "https://www.countryflags.com/countryflags-file/countryflags/guinee-bissau/flag-webp-xs.webp?v=6aa822b5-2e6",
+    Western_Sahara: "https://www.countryflags.com/countryflags-file/countryflags/westelijke-sahara/flag-webp-xs.webp?v=6aa835fb-5ee",
+    Uzbekistan: "https://www.countryflags.com/flag-of-uzbekistan/",
+    Kazakhstan: "https://www.countryflags.com/countryflags-file/countryflags/kazachstan/flag-webp-xs.webp?v=6aa82298-1c16",
+    Cambodia: "https://www.countryflags.com/countryflags-file/countryflags/cambodja/flag-webp-xs.webp?v=6aa833ea-128c",
+    Tajikistan: "https://www.countryflags.com/countryflags-file/countryflags/tadzjikistan/flag-webp-xs.webp?v=6aa82298-634",
+    Lebanon: "https://www.countryflags.com/countryflags-file/countryflags/libanon/flag-webp-xs.webp?v=6aa833ea-f28",
+    Oman: "https://www.countryflags.com/flag-of-oman/",
+    Timor_Leste: "https://www.countryflags.com/countryflags-file/countryflags/oost-timor/flag-webp-xs.webp?v=6aa83585-5be",
+    Macau: "https://www.countryflags.com/countryflags-file/countryflags/macau-sar-van-china/flag-webp-xs.webp?v=6aa835fb-302",
+    Brunei: "https://www.countryflags.com/countryflags-file/countryflags/brunei/flag-webp-xs.webp?v=6aa83598-1b72",
+    Maldives: "https://www.countryflags.com/countryflags-file/countryflags/maldiven/flag-png-medium.png?v=6aa1aae0-294c",
+    Romania: "https://www.countryflags.com/countryflags-file/countryflags/roemenie/flag-webp-xs.webp?v=6aa8350c-70",
+    Belarus: "https://www.countryflags.com/countryflags-file/countryflags/belarus/flag-webp-xs.webp?v=6aa8202f-1196",
+    Hungary: "https://www.countryflags.com/countryflags-file/countryflags/hongarije/flag-webp-xs.webp?v=6aa8352f-74",
+    Bulgaria: "https://www.countryflags.com/countryflags-file/countryflags/bulgarije/flag-webp-xs.webp?v=6aa8202f-80",
+    Wales: "https://www.countryflags.com/countryflags-file/countryflags/wales/flag-webp-xs.webp?v=6aa834ed-d1e",
+    Moldova: "https://www.countryflags.com/countryflags-file/countryflags/moldavie/flag-webp-xs.webp?v=6aa822b5-18f6",
+    Montenegro: "https://www.countryflags.com/countryflags-file/countryflags/montenegro/flag-webp-xs.webp?v=6aa83568-1df2",
+    Isle_of_man: "https://www.countryflags.com/countryflags-file/countryflags/isle-of-man/flag-webp-xs.webp?v=6aa8358e-18a4",
+    Vatican_City: "https://www.countryflags.com/countryflags-file/countryflags/vaticaanstad/flag-webp-xs.webp?v=6aa8358f-40a4",
+    North_Macedonia: "https://www.countryflags.com/countryflags-file/countryflags/noord-macedonie/flag-webp-xs.webp?v=6aa83568-b62",   
 }
+
 
 let total = 0;
 let correct = 0;
@@ -110,9 +141,8 @@ function renderFlag(country, url) {
     const img = document.createElement("img");
     img.src = url;
     img.alt = `${country} flag`;
-    img.style.width = '380px';
-    img.style.height = '190px';
-    img.style.marginLeft = '545px';
+    img.style.width = '600px';
+    img.style.height = '300px';
     container.innerHTML = "";
     container.appendChild(img);
 }
@@ -133,15 +163,15 @@ function changeCountry(dictionaryflag) {
     form.onsubmit = async function (event) {
         event.preventDefault();
 
-        const answer = guessInput.value.trim().toLowerCase();
+        const answer = guessInput.value.trim().toLowerCase().replace(" ", "_");
 
-        if (answer == country.toLowerCase()) {
+        if (answer == country.toLowerCase() || country == 'UAE' && answer == 'united_arab_emirates' || country == 'US' && answer == 'united_states' || country == 'UK' && answer == 'united_kingdom' || country == 'Democratic_Republic_of_Congo' && answer == "drc") {
             congrats.style.visibility = 'visible';
             correct++;
         } 
         else {
             sorry.style.visibility = 'visible';
-            sorry.innerHTML = 'Incorrect, this is ' + country;
+            sorry.innerHTML = 'Incorrect, this is ' + country.replace("_", " ");
 
         }
         total++;
@@ -159,7 +189,7 @@ if (isMedium)
 }
 else if (isEasy)
 {
-    changeCountry(easyflags);
+    changeCountry(easyflags); /// 20 flags 
 }
 else if (isHard)
 {
