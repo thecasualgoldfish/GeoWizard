@@ -95,6 +95,11 @@ const hardflags = {
 let total = 0;
 let correct = 0;
 
+function sleep(time)
+{
+    return new Promise((resolve) => setTimeout(resolve, time));
+}
+
 function getRandomCountry(dictionaryflag) {
     const entries = Object.entries(dictionaryflag || easyflags);
     return entries[Math.floor(Math.random() * entries.length)];
@@ -113,28 +118,37 @@ function renderFlag(country, url) {
 }
 
 function changeCountry(dictionaryflag) {
+    let congrats = document.querySelector("#congrats");
+    let sorry = document.querySelector("#sorry");
+
     const guessInput = document.querySelector("#guess");
     const form = document.querySelector("#guessbox");
     const [country, url] = getRandomCountry(dictionaryflag);
 
     renderFlag(country, url);
+    congrats.style.visibility = 'hidden';
+    sorry.style.visibility = 'hidden';
+
     
-    form.onsubmit = function (event) {
+    form.onsubmit = async function (event) {
         event.preventDefault();
 
         const answer = guessInput.value.trim().toLowerCase();
 
-        if (answer === country.toLowerCase()) {
-            alert("Correct!");
+        if (answer == country.toLowerCase()) {
+            congrats.style.visibility = 'visible';
             correct++;
         } 
         else {
-            alert("Incorrect! This is " + country);
+            sorry.style.visibility = 'visible';
+            sorry.innerHTML = 'Incorrect, this is ' + country;
+
         }
         total++;
         guessInput.value = "";
         const percentCorrect = total ? (correct / total) * 100 : 0;
         console.log(`Score: ${correct}/${total} (${percentCorrect.toFixed(1)}%)`);
+        await sleep(2000);
 
         changeCountry(dictionaryflag);
     };
