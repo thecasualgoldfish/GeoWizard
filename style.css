@@ -165,30 +165,39 @@ body
 }
 #guessbox
 {
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 .titles
 {
     text-align: center;
     font-size: xx-large;
-    margin-left: 610px;
-    margin-bottom: 400px;
+    display: flex;
+    justify-content: center;
 }
 .flagfooter
 {
     margin-left: 30px;
-    margin-top: 250px;
+    margin-top: 110px;
 }
 #congrats 
 {
     text-align: center;
     font-size: xx-large;
-    margin-left: 675px;
+    display: flex;
+    justify-content: center;
 }
 #sorry
 {
     text-align:center;
-    font-size: xx-large;
-    margin-left: 580px;
-    
+    font-size: xx-large;   
+    display: flex;
+    justify-content: center;
+}
+#flags
+{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
