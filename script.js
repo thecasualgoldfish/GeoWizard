@@ -86,9 +86,9 @@ const mediumflags = {
     South_africa: "https://tse1.mm.bing.net/th/id/OIP.f8A9gVe_etPVSePCSoI7xQHaE8?r=0&pid=Api&h=220&P=0",
 };
 const hardflags = {
-    Democratic_Republic_of_Congo: "https://www.countryflags.com/flag-of-congo-democratic-republic-of-the/",
+    Democratic_Republic_of_Congo: "https://up.yimg.com/ib/th/id/OIP.kJuocRLjvk7LGgLqkManhwHaFj?pid=Api&rs=1&c=1&qlt=95&w=162&h=121",
     Tanzania: "https://www.countryflags.com/countryflags-file/countryflags/tanzania/flag-webp-xs.webp?v=6aa82285-652",
-    Angola: "https://www.countryflags.com/countryflags-file/countryflags/angola/flag-webp-xs.webp?v=6aa833de-f72",
+    Angola: "https://up.yimg.com/ib/th/id/OIP.cmPMtv83z2id0tlpIyc4YgHaE8?pid=Api&rs=1&c=1&qlt=95&w=161&h=107",
     Mozambique: "https://www.countryflags.com/countryflags-file/countryflags/mozambique/flag-webp-xs.webp?v=6aa82293-1572",
     Ivory_Coast: "https://www.countryflags.com/countryflags-file/countryflags/ivoorkust/flag-png-medium.png?v=6aa1aa62-efa",
     Cameroon: "https://www.countryflags.com/countryflags-file/countryflags/kameroen/flag-webp-xs.webp?v=6aa82294-2f0",
@@ -100,7 +100,7 @@ const hardflags = {
     Gambia: "https://www.countryflags.com/countryflags-file/countryflags/gambia/flag-webp-xs.webp?v=6aa83585-a2",
     Guinea_bissau: "https://www.countryflags.com/countryflags-file/countryflags/guinee-bissau/flag-webp-xs.webp?v=6aa822b5-2e6",
     Western_Sahara: "https://www.countryflags.com/countryflags-file/countryflags/westelijke-sahara/flag-webp-xs.webp?v=6aa835fb-5ee",
-    Uzbekistan: "https://www.countryflags.com/countryflags-file/countryflags/oezbekistan/flag-webp-xs.webp?v=6aa82293-330",
+    Uzbekistan: "https://country-flags.org/downloads/uzbekistan-flag/raster/uzbekistan-flag-2560px-1280px.jpg",
     Kazakhstan: "https://www.countryflags.com/countryflags-file/countryflags/kazachstan/flag-webp-xs.webp?v=6aa82298-1c16",
     Cambodia: "https://www.countryflags.com/countryflags-file/countryflags/cambodja/flag-webp-xs.webp?v=6aa833ea-128c",
     Tajikistan: "https://www.countryflags.com/countryflags-file/countryflags/tadzjikistan/flag-webp-xs.webp?v=6aa82298-634",
@@ -175,11 +175,11 @@ function changeCountry(dictionaryflag) {
     congrats.style.visibility = 'hidden';
     sorry.style.visibility = 'hidden';
 
+
     
     form.onsubmit = async function (event) {
         event.preventDefault();
-
-        const answer = guessInput.value.trim().toLowerCase().replace(" ", "_");
+        const answer = guessInput.value.trim().toLowerCase().replaceAll(" ", "_");
 
         if (answer == country.toLowerCase() || country == 'UAE' && answer == 'united_arab_emirates' || country == 'US' && answer == 'united_states' || country == 'UK' && answer == 'united_kingdom' || country == 'Democratic_Republic_of_Congo' && answer == "drc") {
             congrats.style.visibility = 'visible';
@@ -187,7 +187,7 @@ function changeCountry(dictionaryflag) {
         } 
         else {
             sorry.style.visibility = 'visible';
-            sorry.innerHTML = 'Incorrect, this is ' + country.replace("_", " ");
+            sorry.innerHTML = 'Incorrect, this is ' + country.replaceAll("_", " ");
 
         }
         total++;
