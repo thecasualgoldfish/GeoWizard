@@ -1,8 +1,8 @@
 const easyflags = {
-    us: "https://flagsapi.com/US/flat/64.png",
+    us: "unitedstates.png",
     argentina: "https://flagsapi.com/AR/flat/64.png",
-    france: "https://flagsapi.com/FR/flat/64.png",
-    uk: "https://flagsapi.com/GB/flat/64.png",
+    france: "france.png",
+    uk: "unitedkingdom.png",
     ireland: "https://flagsapi.com/IE/flat/64.png",
     russia: "https://flagsapi.com/RU/flat/64.png",
     mexico: "https://flagsapi.com/MX/flat/64.png",
@@ -105,8 +105,9 @@ function renderFlag(country, url) {
     const img = document.createElement("img");
     img.src = url;
     img.alt = `${country} flag`;
-    img.style.width = 350;
-    img.style.height = 350;
+    img.style.width = '380px';
+    img.style.height = '190px';
+    img.style.marginLeft = '545px';
     container.innerHTML = "";
     container.appendChild(img);
 }
@@ -126,8 +127,9 @@ function changeCountry(dictionaryflag) {
         if (answer === country.toLowerCase()) {
             alert("Correct!");
             correct++;
-        } else {
-            console.log("Incorrect!");
+        } 
+        else {
+            alert("Incorrect! This is " + country);
         }
         total++;
         guessInput.value = "";
