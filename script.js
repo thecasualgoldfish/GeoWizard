@@ -137,8 +137,33 @@ const hardflags = {
     Suriname: "https://www.countryflags.com/countryflags-file/countryflags/suriname/flag-webp-xs.webp?v=6aa835fb-434",
     North_Macedonia: "https://www.countryflags.com/countryflags-file/countryflags/noord-macedonie/flag-webp-xs.webp?v=6aa83568-b62",   
 }
+const europeflags = {
+    Romania: "https://www.countryflags.com/countryflags-file/countryflags/roemenie/flag-webp-xs.webp?v=6aa8350c-70",
+    Belarus: "https://www.countryflags.com/countryflags-file/countryflags/belarus/flag-webp-xs.webp?v=6aa8202f-1196",
+    Hungary: "https://www.countryflags.com/countryflags-file/countryflags/hongarije/flag-webp-xs.webp?v=6aa8352f-74",
+    Bulgaria: "https://www.countryflags.com/countryflags-file/countryflags/bulgarije/flag-webp-xs.webp?v=6aa8202f-80",
+    Wales: "https://www.countryflags.com/countryflags-file/countryflags/wales/flag-webp-xs.webp?v=6aa834ed-d1e",
+    Moldova: "https://www.countryflags.com/countryflags-file/countryflags/moldavie/flag-webp-xs.webp?v=6aa822b5-18f6",
+    Montenegro: "https://www.countryflags.com/countryflags-file/countryflags/montenegro/flag-webp-xs.webp?v=6aa83568-1df2",
+    Isle_of_man: "https://www.countryflags.com/countryflags-file/countryflags/isle-of-man/flag-webp-xs.webp?v=6aa8358e-18a4",
+    Vatican_City: "https://www.countryflags.com/countryflags-file/countryflags/vaticaanstad/flag-webp-xs.webp?v=6aa8358f-40a4",
 
+}
+const africaflags = {
 
+}
+const asiaflags = {
+
+}
+const northamericaflags = {
+
+}
+const southamericaflags = {
+
+}
+const oceaniaflags = {
+
+}
 let total = 0;
 let correct = 0;
 
@@ -147,9 +172,16 @@ function sleep(time)
     return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-function getRandomCountry(dictionaryflag) {
-    const entries = Object.entries(dictionaryflag || easyflags);
-    return entries[Math.floor(Math.random() * entries.length)];
+function getRandomCountry(dictionaryflag, previousflag) {
+    const entries = Object.entries(dictionaryflag);
+    let image = entries[Math.floor(Math.random() * entries.length)];
+    while (image[0] == previousflag)
+    {
+        const entries = Object.entries(dictionaryflag);
+        image = entries[Math.floor(Math.random() * entries.length)];
+    }
+
+    return image;
 }
 
 function renderFlag(country, url) {
@@ -180,6 +212,7 @@ function changeCountry(dictionaryflag) {
     form.onsubmit = async function (event) {
         event.preventDefault();
         const answer = guessInput.value.trim().toLowerCase().replaceAll(" ", "_");
+        let previousflag = country;
 
         if (answer == country.toLowerCase() || country == 'UAE' && answer == 'united_arab_emirates' || country == 'US' && answer == 'united_states' || country == 'UK' && answer == 'united_kingdom' || country == 'Democratic_Republic_of_Congo' && answer == "drc") {
             congrats.style.visibility = 'visible';
@@ -196,7 +229,7 @@ function changeCountry(dictionaryflag) {
         console.log(`Score: ${correct}/${total} (${percentCorrect.toFixed(1)}%)`);
         await sleep(2000);
 
-        changeCountry(dictionaryflag);
+        changeCountry(dictionaryflag, previousflag);
     };
     } 
 if (isMedium)
