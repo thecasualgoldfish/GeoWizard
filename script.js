@@ -5,20 +5,20 @@ const easyflags = {
     UK: "unitedkingdom.png",
     Ireland: "ireland.png",
     Russia: "russia.png",
-    Mexico: "mexico.png",
-    Australia: "australia.png",
-    Brazil: "brazil.png",
     Germany: "germany.png",
-    Egypt: "egypt.png",
     Spain: "spain.png",
     Greece: "greece.png",
-    India: "https://static.vecteezy.com/system/resources/previews/016/591/159/original/national-flag-of-india-flat-color-icon-vector.jpg",
+    Sweden: "https://tse4.mm.bing.net/th/id/OIP.qkUrMRc3ayMPvEb5wRNYVwHaE7?r=0&pid=Api&h=220&P=0",
+    Ukraine: "https://tse4.mm.bing.net/th/id/OIP.6yAVidk6vUfjLFPo-dnVbAHaE7?r=0&pid=Api&h=220&P=0",
     Italy: "https://tse4.mm.bing.net/th/id/OIP.NmgcZMzgaU9Hd8eVk6Ua4AHaE8?r=0&pid=Api&h=220&P=0",
     Japan: "https://tse3.mm.bing.net/th/id/OIP.CQe2YZJTOcujPbi8F76ZIQHaEK?r=0&pid=Api&h=220&P=0",
     North_Korea: "https://tse1.mm.bing.net/th/id/OIP.0N2AtyiejT2F4lRviwBnvgHaE7?r=0&pid=Api&h=220&P=0",
     South_Korea: "https://tse2.mm.bing.net/th/id/OIP.P5kpQILueRwN9gSka3giwgHaE8?r=0&pid=Api&h=220&P=0",
-    Sweden: "https://tse4.mm.bing.net/th/id/OIP.qkUrMRc3ayMPvEb5wRNYVwHaE7?r=0&pid=Api&h=220&P=0",
-    Ukraine: "https://tse4.mm.bing.net/th/id/OIP.6yAVidk6vUfjLFPo-dnVbAHaE7?r=0&pid=Api&h=220&P=0",
+    India: "https://static.vecteezy.com/system/resources/previews/016/591/159/original/national-flag-of-india-flat-color-icon-vector.jpg",
+    Egypt: "egypt.png",
+    Mexico: "mexico.png",
+    Australia: "australia.png",
+    Brazil: "brazil.png",
 };
 
 const mediumflags = {
@@ -98,11 +98,11 @@ const hardflags = {
     Guinea: "https://www.countryflags.com/countryflags-file/countryflags/guinee/flag-webp-xs.webp?v=6aa82298-74",
     Namibia: "https://www.countryflags.com/countryflags-file/countryflags/namibie/flag-webp-xs.webp?v=6aa822b5-ffc",
     Gambia: "https://www.countryflags.com/countryflags-file/countryflags/gambia/flag-webp-xs.webp?v=6aa83585-a2",
-    Guinea_bissau: "https://www.countryflags.com/countryflags-file/countryflags/guinee-bissau/flag-webp-xs.webp?v=6aa822b5-2e6",
+    Guinea_bissau: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_Guinea-Bissau.svg/1280px-Flag_of_Guinea-Bissau.svg.png",
     Western_Sahara: "https://www.countryflags.com/countryflags-file/countryflags/westelijke-sahara/flag-webp-xs.webp?v=6aa835fb-5ee",
     Uzbekistan: "https://country-flags.org/downloads/uzbekistan-flag/raster/uzbekistan-flag-2560px-1280px.jpg",
     Kazakhstan: "https://www.countryflags.com/countryflags-file/countryflags/kazachstan/flag-webp-xs.webp?v=6aa82298-1c16",
-    Cambodia: "https://www.countryflags.com/countryflags-file/countryflags/cambodja/flag-webp-xs.webp?v=6aa833ea-128c",
+    Cambodia: "https://www.worldatlas.com/upload/82/f9/1e/shutterstock-391563562.jpg",
     Tajikistan: "https://www.countryflags.com/countryflags-file/countryflags/tadzjikistan/flag-webp-xs.webp?v=6aa82298-634",
     Lebanon: "https://www.countryflags.com/countryflags-file/countryflags/libanon/flag-webp-xs.webp?v=6aa833ea-f28",
     Oman: "https://www.countryflags.com/countryflags-file/countryflags/oman/flag-webp-xs.webp?v=6aa833ea-732",
@@ -110,7 +110,7 @@ const hardflags = {
     Macau: "https://www.countryflags.com/countryflags-file/countryflags/macau-sar-van-china/flag-webp-xs.webp?v=6aa835fb-302",
     Brunei: "https://www.countryflags.com/countryflags-file/countryflags/brunei/flag-webp-xs.webp?v=6aa83598-1b72",
     Maldives: "https://www.countryflags.com/countryflags-file/countryflags/maldiven/flag-png-medium.png?v=6aa1aae0-294c",
-    Romania: "https://www.countryflags.com/countryflags-file/countryflags/roemenie/flag-webp-xs.webp?v=6aa8350c-70",
+    Romania: "https://up.yimg.com/ib/th/id/OIP.Gsy04uBPPGr8x8eQTFZ1UAHaE8?pid=Api&rs=1&c=1&qlt=95&w=149&h=99",
     Belarus: "https://www.countryflags.com/countryflags-file/countryflags/belarus/flag-webp-xs.webp?v=6aa8202f-1196",
     Hungary: "https://www.countryflags.com/countryflags-file/countryflags/hongarije/flag-webp-xs.webp?v=6aa8352f-74",
     Bulgaria: "https://www.countryflags.com/countryflags-file/countryflags/bulgarije/flag-webp-xs.webp?v=6aa8202f-80",
@@ -137,7 +137,7 @@ const hardflags = {
     Suriname: "https://www.countryflags.com/countryflags-file/countryflags/suriname/flag-webp-xs.webp?v=6aa835fb-434",
     North_Macedonia: "https://www.countryflags.com/countryflags-file/countryflags/noord-macedonie/flag-webp-xs.webp?v=6aa83568-b62",   
 }
-const europeflags = {
+const europeFlags = {
     Romania: "https://www.countryflags.com/countryflags-file/countryflags/roemenie/flag-webp-xs.webp?v=6aa8350c-70",
     Belarus: "https://www.countryflags.com/countryflags-file/countryflags/belarus/flag-webp-xs.webp?v=6aa8202f-1196",
     Hungary: "https://www.countryflags.com/countryflags-file/countryflags/hongarije/flag-webp-xs.webp?v=6aa8352f-74",
@@ -147,21 +147,31 @@ const europeflags = {
     Montenegro: "https://www.countryflags.com/countryflags-file/countryflags/montenegro/flag-webp-xs.webp?v=6aa83568-1df2",
     Isle_of_man: "https://www.countryflags.com/countryflags-file/countryflags/isle-of-man/flag-webp-xs.webp?v=6aa8358e-18a4",
     Vatican_City: "https://www.countryflags.com/countryflags-file/countryflags/vaticaanstad/flag-webp-xs.webp?v=6aa8358f-40a4",
+    North_Macedonia: "https://www.countryflags.com/countryflags-file/countryflags/noord-macedonie/flag-webp-xs.webp?v=6aa83568-b62", 
+    France: "france.png",
+    UK: "unitedkingdom.png",
+    Ireland: "ireland.png",
+    Russia: "russia.png",
+    Germany: "germany.png",
+    Spain: "spain.png",
+    Greece: "greece.png",
+    Sweden: "https://tse4.mm.bing.net/th/id/OIP.qkUrMRc3ayMPvEb5wRNYVwHaE7?r=0&pid=Api&h=220&P=0",
+    Ukraine: "https://tse4.mm.bing.net/th/id/OIP.6yAVidk6vUfjLFPo-dnVbAHaE7?r=0&pid=Api&h=220&P=0",
+    Italy: "https://tse4.mm.bing.net/th/id/OIP.NmgcZMzgaU9Hd8eVk6Ua4AHaE8?r=0&pid=Api&h=220&P=0",
+}
+const africaFlags = {
 
 }
-const africaflags = {
+const asiaFlags = {
 
 }
-const asiaflags = {
+const northFlags = {
 
 }
-const northamericaflags = {
+const southFlags = {
 
 }
-const southamericaflags = {
-
-}
-const oceaniaflags = {
+const oceaniaFlags = {
 
 }
 let total = 0;
@@ -172,7 +182,8 @@ function sleep(time)
     return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-function getRandomCountry(dictionaryflag, previousflag) {
+function getRandomCountry(dictionaryflag, previousflag) 
+{
     const entries = Object.entries(dictionaryflag);
     let image = entries[Math.floor(Math.random() * entries.length)];
     while (image[0] == previousflag)
@@ -184,11 +195,12 @@ function getRandomCountry(dictionaryflag, previousflag) {
     return image;
 }
 
-function renderFlag(country, url) {
+function renderFlag(country, url) 
+{
     const container = document.querySelector("#flags");
     const img = document.createElement("img");
     img.src = url;
-    img.alt = `${country} flag`;
+    img.alt = country + 'flag';
     img.style.width = '600px';
     img.style.height = '300px';
     container.innerHTML = "";
@@ -196,17 +208,20 @@ function renderFlag(country, url) {
 }
 
 function changeCountry(dictionaryflag) {
-    let congrats = document.querySelector("#congrats");
+    let right = document.querySelector("#correct");
     let sorry = document.querySelector("#sorry");
-
     const guessInput = document.querySelector("#guess");
     const form = document.querySelector("#guessbox");
+    const stop = document.querySelector("#stop");
+    const change = document.querySelector("#change");
+    
     const [country, url] = getRandomCountry(dictionaryflag);
 
     renderFlag(country, url);
-    congrats.style.visibility = 'hidden';
+    
+    right.style.visibility = 'hidden';
     sorry.style.visibility = 'hidden';
-
+    
 
     
     form.onsubmit = async function (event) {
@@ -215,7 +230,7 @@ function changeCountry(dictionaryflag) {
         let previousflag = country;
 
         if (answer == country.toLowerCase() || country == 'UAE' && answer == 'united_arab_emirates' || country == 'US' && answer == 'united_states' || country == 'UK' && answer == 'united_kingdom' || country == 'Democratic_Republic_of_Congo' && answer == "drc") {
-            congrats.style.visibility = 'visible';
+            right.style.visibility = 'visible';
             correct++;
         } 
         else {
@@ -224,13 +239,24 @@ function changeCountry(dictionaryflag) {
 
         }
         total++;
+
         guessInput.value = "";
-        const percentCorrect = total ? (correct / total) * 100 : 0;
-        console.log(`Score: ${correct}/${total} (${percentCorrect.toFixed(1)}%)`);
-        await sleep(2000);
+        
+        await sleep(400);
 
         changeCountry(dictionaryflag, previousflag);
-    };
+    }
+    stop.onclick = async function (event) {
+        if (total == 0)
+        {
+            alert("Please answer atleast 1 question.");
+            await sleep(2000);
+            changeCountry(dictionaryflag, previousflag);
+            return;
+        }
+        change.href = 'congrats.html'
+        sessionStorage.setItem('quizResult', JSON.stringify({correct , total}));
+    }
     } 
 if (isMedium)
 {
@@ -244,10 +270,29 @@ else if (isHard)
 {
     changeCountry(hardflags);
 }
+else if(isAfrica)
+{
+    changeCountry(africaFlags);
+}
+else if(isAsia)
+{
+    changeCountry(asiaFlags);
+}
+else if(isEurope)
+{
+    changeCountry(europeFlags);
+}
+else if(isNorthA)
+{
+    changeCountry(northFlags);
+}
+else if(isSouthA)
+{
+    changeCountry(southFlags);
+}
 else
 {
-    
-}
 
+}
 
 

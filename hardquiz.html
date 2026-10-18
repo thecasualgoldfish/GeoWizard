@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <link href="style.css" rel="stylesheet">
-        <title>
+        <title id="title">
             Hard Flag Quiz
         </title>
         <header class="logorow">
@@ -10,20 +10,26 @@
             <a href="dailygame.html" class="link">Daily Game</a>
             <a href="flagpractice.html" class="link">Flag Practice</a>
             <a href="flagquiz.html" class="link">Flag Quiz</a>
-        </header>      
+        </header>        
     </head>
-    <body>
+    <body id="quiz">
         <span class="titles">Hard Flag Quiz</span>
         <div id="flags"></div>
+        <div id="continue"></div>
         <form id="guessbox">
             <label for="guess">Which country is this?</label>
             <input id="guess" type="text" required>
         </form>
         <div>
-            <span id="congrats">Correct!</span>
+            <span id="correct">Correct!</span>
         </div>
         <div>
             <span id="sorry">Incorrect</span>
+        </div>
+        <div class="stop">
+            <a id="change">
+                <button id="stop">Stop</button>
+            </a>  
         </div>
     </body>
     <script>
