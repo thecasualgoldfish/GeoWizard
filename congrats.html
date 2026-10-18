@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <title>
+            Congratulations!
+        </title>
+        <header class="logorow">
+            <a href="index.html" class= "link"><h4 class="logo">GeoWizard</h4></a>
+            <a href="dailygame.html" class="link">Daily Game</a>
+            <a href="flagpractice.html" class="link">Flag Practice</a>
+            <a href="flagquiz.html" class="link">Flag Quiz</a>
+        </header>        
+    </head>
+    <body>
+        <div id = "accuracy"></div>
+        <div id = "pic" class = "center"></div>
+        <script>
+            const accuracy = document.querySelector("#accuracy");
+            const pic = document.querySelector("#pic");
+            const result = JSON.parse(sessionStorage.getItem('quizResult'));
+            if (result)
+            {
+                const percent = Math.round((result.correct / result.total) * 100);
+                accuracy.textContent = 'Congrats! You answered ' + result.correct + '/' + result.total + ' flags with an accuracy of ' + percent + '%';
+                const img = document.createElement("img");
+                img.style.width = '600px';
+                img.style.height = '300px';
+                img.style.marginBottom = '20px';
+                img.src = 'https://tse1.mm.bing.net/th/id/OIP.tYl9RWWJo3Orvwsu4JXQUwHaEo?r=0&pid=Api&h=220&P=0';
+                img.alt = 'Flag image';
+                pic.appendChild(img);
+            }
+        </script>
+        <div class="center">Click the Geowizard logo to go back to home, or one of the three options in the top right to continue having fun!</div>
+    </body>
+    <footer class="flagfooter">
+        <img src="https://flagsapi.com/US/flat/64.png">
+        <img src="https://flagsapi.com/GB/flat/64.png">
+        <img src="https://flagsapi.com/BE/flat/64.png">
+        <img src="https://flagsapi.com/BR/flat/64.png">
+        <img src="https://flagsapi.com/PL/flat/64.png">
+        <img src="https://flagsapi.com/PK/flat/64.png">
+        <img src="https://flagsapi.com/RU/flat/64.png">
+        <img src="https://flagsapi.com/PH/flat/64.png">
+        <img src="https://flagsapi.com/JP/flat/64.png">
+        <img src="https://flagsapi.com/RW/flat/64.png">
+        <img src="https://flagsapi.com/SE/flat/64.png">
+        <img src="https://flagsapi.com/RS/flat/64.png">
+        <img src="https://flagsapi.com/RO/flat/64.png">
+        <img src="https://flagsapi.com/SG/flat/64.png">
+        <img src="https://flagsapi.com/KH/flat/64.png">
+        <img src="https://flagsapi.com/KR/flat/64.png">
+        <img src="https://flagsapi.com/MA/flat/64.png">
+        <img src="https://flagsapi.com/SG/flat/64.png">
+        <img src="https://flagsapi.com/KZ/flat/64.png">
+        <img src="https://flagsapi.com/LA/flat/64.png">
+    </footer>
+</html>
