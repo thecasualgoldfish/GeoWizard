@@ -8,7 +8,7 @@ GeoWizard was coded with HTML, CSS and JavaScript.
 
 ## What can I do on GeoWizard?
 GeoWizard contains 3 game selections: flag practice, quiz, and a daily game! 
-**The Flag Practice and Daily Game are currently unavailable**
+!! The Flag Practice and Daily Game are currently unavailable !!
 
 ## How do I navigate the website?
 To navigate the website, click one of the selections in the top right corner. On any page you are also able to click the 'GeoWizard' logo in the top left of the screen to go back to the home page. 

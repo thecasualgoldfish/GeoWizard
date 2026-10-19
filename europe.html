@@ -2,8 +2,8 @@
 <html lang="en">
     <head>
         <link href="style.css" rel="stylesheet">
-        <title>
-            Easy Flag Quiz
+        <title id="title">
+            Europe Flag Practice
         </title>
         <header class="logorow">
             <a href="index.html" class= "link"><h4 class="logo">GeoWizard</h4></a>
@@ -12,9 +12,37 @@
             <a href="flagquiz.html" class="link">Flag Quiz</a>
         </header>        
     </head>
-    <body>
-        <span class="titles">Europe Practice</span>
+    <body id="quiz">
+        <span class="titles">Europe Flag Practice</span>
+        <div id="flags"></div>
+        <div id="continue"></div>
+        <form id="guessbox">
+            <label for="guess">Which country is this?</label>
+            <input id="guess" type="text" required>
+        </form>
+        <div>
+            <span id="correct">Correct!</span>
+        </div>
+        <div>
+            <span id="sorry">Incorrect</span>
+        </div>
+        <div class="stop">
+            <a id="change">
+                <button id="stop">Stop</button>
+            </a>  
+        </div>
     </body>
+    <script> 
+        let isEurope = true;
+        let isAsia = false;
+        let isNorthA= false;
+        let isOceania = false;
+        let isSouthA = false;
+        let isAfrica = false;
+        let isEasy = false;
+        let isMedium = false;
+        let isHard = false;
+    </script>
     <script src="script.js"></script>
     <footer class="flagfooter">
         <img src="https://flagsapi.com/US/flat/64.png">
