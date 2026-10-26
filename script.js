@@ -375,7 +375,6 @@ const southFlags = {
     Guyana: flag("gy"),
     Paraguay: flag("py"),
     Peru: flag("pe"),
-    Pitcairn_Islands: flag("pn"),
     Suriname: flag("sr"),
     Uruguay: flag("uy"),
     Venezuela: flag("ve"),
@@ -394,6 +393,7 @@ const oceaniaFlags = {
     Micronesia: flag("fm"),
     Nauru: flag("nr"),
     New_Caledonia: flag("nc"),
+    Pitcairn_Islands: flag("pn"),
     New_Zealand: flag("nz"),
     Niue: flag("nu"),
     Norfolk_Island: flag("nf"),
@@ -442,54 +442,46 @@ function renderFlag(country, url)
     container.appendChild(img);
 }
 
-function changeCountry(dictionaryflag) {
+function changeCountry(dictionaryflag, previousflag) {
     let right = document.querySelector("#correct");
     let sorry = document.querySelector("#sorry");
     const guessInput = document.querySelector("#guess");
     const form = document.querySelector("#guessbox");
     const stop = document.querySelector("#stop");
     const change = document.querySelector("#change");
-    
-    const [country, url] = getRandomCountry(dictionaryflag);
-
+    const [country, url] = getRandomCountry(dictionaryflag, previousflag);
     renderFlag(country, url);
-    
     right.style.visibility = 'hidden';
     sorry.style.visibility = 'hidden';
     
 
-    
     form.onsubmit = async function (event) {
         event.preventDefault();
         const answer = guessInput.value.trim().toLowerCase().replaceAll(" ", "_");
-        let previousflag = country;
-
         if (answer == country.toLowerCase() || country == 'UAE' && answer == 'united_arab_emirates' || country == 'US' && answer == 'united_states' || country == 'UK' && answer == 'united_kingdom' || country == 'Democratic_Republic_of_Congo' && answer == "drc") {
             right.style.visibility = 'visible';
             correct++;
         } 
-        else {
+        else 
+        {
             sorry.style.visibility = 'visible';
             sorry.innerHTML = 'Incorrect, this is ' + country.replaceAll("_", " ");
 
         }
         total++;
-
         guessInput.value = "";
-        
         await sleep(2000);
-
-        changeCountry(dictionaryflag, previousflag);
+        changeCountry(dictionaryflag, country);
     }
     stop.onclick = async function (event) {
         if (total == 0)
         {
             alert("Please answer atleast 1 question.");
             await sleep(2000);
-            changeCountry(dictionaryflag, previousflag);
+            changeCountry(dictionaryflag, country);
             return;
         }
-        change.href = 'congrats.html'
+        change.href = 'congrats.html';
         sessionStorage.setItem('quizResult', JSON.stringify({correct , total}));
     }
     } 

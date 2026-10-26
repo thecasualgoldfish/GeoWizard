@@ -149,6 +149,7 @@ body
 {
     display: flex;
     justify-content: center;
+    border-color: black;
 }
 .titles
 {
@@ -216,27 +217,93 @@ body
     display: flex;
     justify-content: center;
 }
-.letter
+.letter-box
 {
-    flex: 0 0 300px;
-    width: 50px;
+    flex: 0 0 50px;
     height: 50px;;
     border: 1px solid #e0e0e0;
-    border-radius: 12px;
+    margin: 10px;
+    margin-top: 50px;
+    text-decoration: none;
+    background-color: whitesmoke;
+}
+.letter-space
+{
+    flex: 0 0 25px;
+    height: 50px;;
+    border: 1px solid #e0e0e0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    margin: 20px;
-    text-align: center;
-    margin-top: 30px;
+    margin: 10px;
+    margin-top: 50px;
     text-decoration: none;
     background-color: red;
+}
+.letter-box
+{
+    margin: none;
+    text-align: center;
+    width: 20px;
+    display: flex;
+    flex-direction: row;
+    border-color: black;
 }
 #letter-row
 {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 20px;
     padding: 20px;
     flex-wrap: nowrap;
     overflow-x: auto;
+}
+.letter
+{
+    margin-bottom: 10px;
+    margin-top: 0px;
+    
+}
+#input-row
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+#newRow
+{
+    display: flex;
+    justify-content: center;
+}
+.nextRow
+{
+    display: flex;
+    justify-content: center;
+
+}
+#input-row
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#message
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#hint
+{
+    display: flex;
+    justify-content: center;
+}
+#quitButton
+{
+    margin-top: 20px;
+}
+#sureMessage {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

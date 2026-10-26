@@ -3,46 +3,686 @@
     <head>
         <link href="style.css" rel="stylesheet">
         <title id="title">
-            Country Name of The Day
+            Guess the Country Name
         </title>
         <header class="logorow">
             <a href="index.html" class= "link"><h4 class="logo">GeoWizard</h4></a>
-            <a href="dailygame.html" class="link">Daily Game</a>
+            <a href="dailygame.html" class="link">Games</a>
             <a href="flagpractice.html" class="link">Flag Practice</a>
             <a href="flagquiz.html" class="link">Flag Quiz</a>
         </header>        
     </head>
     <body id="quiz">
-        <div id="letter-row"></div>
+        <div class = 'titles'>Guess the Country Name</div>
+        <div id = "input-row"></div>
+        <div id = "newRow"></div>
+        <div id="message">Please enter a UN recognized country or click the button for a hint!</div>
+        <div id="congrats" class="center"></div>
+        <div id= "sorry" class="center"></div>
+        <div id = 'hint' class = 'center'>
+                <button id = 'hintButton'>
+                    HINT
+                </button>
+        </div>
+        <div class = 'center'>
+            <button id = "tryAgain">
+                Try Again!
+            </button>
+        </div>
+        <div id ="quitRow" class = 'center'>
+            <button id = 'quitButton'>
+                QUIT
+            </button>
+        </div>
+        <div id = 'sureMessage' class = 'center'>Are you sure you want to quit?</div>
+        <div id ='sureRow' class = 'center'>
+            <button id = 'yes'>
+                Yes
+            </button>
+            <button id = 'no'>
+                No, continue.
+            </button>
+        </div>
+
         <script>
+        const countryNames = [
+            'afghanistan',
+            'albania',
+            'algeria',
+            'andorra',
+            'angola',
+            'antigua and barbuda',
+            'argentina',
+            'armenia',
+            'australia',
+            'austria',
+            'azerbaijan',
+            'bahamas',
+            'bahrain',
+            'bangladesh',
+            'barbados',
+            'belarus',
+            'belgium',
+            'belize',
+            'benin',
+            'bhutan',
+            'bolivia',
+            'bosnia and herzegovina',
+            'botswana',
+            'brazil',
+            'brunei',
+            'bulgaria',
+            'burkina faso',
+            'burundi',
+            'cabo verde',
+            'cambodia',
+            'cameroon',
+            'canada',
+            'chad',
+            'chile',
+            'china',
+            'colombia',
+            'comoros',
+            'costa rica',
+            'croatia',
+            'cuba',
+            'cyprus',
+            'czechia',
+            'denmark',
+            'djibouti',
+            'dominica',
+            'dominican republic',
+            'ecuador',
+            'egypt',
+            'el salvador',
+            'equatorial guinea',
+            'eritrea',
+            'estonia',
+            'eswatini',
+            'ethiopia',
+            'fiji',
+            'finland',
+            'france',
+            'gabon',
+            'gambia',
+            'georgia',
+            'germany',
+            'ghana',
+            'greece',
+            'grenada',
+            'guatemala',
+            'guinea',
+            'guyana',
+            'haiti',
+            'honduras',
+            'hungary',
+            'iceland',
+            'india',
+            'indonesia',
+            'iran',
+            'iraq',
+            'ireland',
+            'israel',
+            'italy',
+            'jamaica',
+            'japan',
+            'jordan',
+            'kazakhstan',
+            'kenya',
+            'kiribati',
+            'kuwait',
+            'kyrgyzstan',
+            'laos',
+            'latvia',
+            'lebanon',
+            'lesotho',
+            'liberia',
+            'libya',
+            'liechtenstein',
+            'lithuania',
+            'luxembourg',
+            'madagascar',
+            'malawi',
+            'malaysia',
+            'maldives',
+            'mali',
+            'malta',
+            'marshall islands',
+            'mauritania',
+            'mauritius',
+            'mexico',
+            'micronesia',
+            'moldova',
+            'monaco',
+            'mongolia',
+            'montenegro',
+            'morocco',
+            'mozambique',
+            'myanmar',
+            'namibia',
+            'nauru',
+            'nepal',
+            'netherlands',
+            'new zealand',
+            'nicaragua',
+            'niger',
+            'nigeria',
+            'north korea',
+            'north macedonia',
+            'norway',
+            'oman',
+            'pakistan',
+            'palau',
+            'panama',
+            'papua new guinea',
+            'paraguay',
+            'peru',
+            'philippines',
+            'poland',
+            'portugal',
+            'qatar',
+            'romania',
+            'russia',
+            'rwanda',
+            'saint lucia',
+            'samoa',
+            'san marino',
+            'saudi arabia',
+            'senegal',
+            'serbia',
+            'seychelles',
+            'sierra leone',
+            'singapore',
+            'slovakia',
+            'slovenia',
+            'solomon islands',
+            'somalia',
+            'south africa',
+            'south korea',
+            'south sudan',
+            'spain',
+            'sri lanka',
+            'sudan',
+            'suriname',
+            'sweden',
+            'switzerland',
+            'syria',
+            'tajikistan',
+            'tanzania',
+            'thailand',
+            'togo',
+            'tonga',
+            'tunisia',
+            'turkey',
+            'turkmenistan',
+            'tuvalu',
+            'uganda',
+            'ukraine',
+            'united kingdom',
+            'united states',
+            'uruguay',
+            'uzbekistan',
+            'vanuatu',
+            'vatican city',
+            'venezuela',
+            'vietnam',
+            'yemen',
+            'zambia',
+            'zimbabwe'
+            ];
+        const europeCountries = [
+            "albania",
+            "andorra",
+            "austria",
+            "belarus",
+            "belgium",
+            "bosnia and herzegovina",
+            "bulgaria",
+            "croatia",
+            "czechia",
+            "denmark",
+            "estonia",
+            "finland",
+            "france",
+            "georgia",
+            "germany",
+            "greece",
+            "hungary",
+            "iceland",
+            "ireland",
+            "italy",
+            "latvia",
+            "liechtenstein",
+            "lithuania",
+            "luxembourg",
+            "malta",
+            "moldova",
+            "monaco",
+            "montenegro",
+            "netherlands",
+            "north macedonia",
+            "norway",
+            "poland",
+            "portugal",
+            "romania",
+            "russia",
+            "san marino",
+            "serbia",
+            "slovakia",
+            "slovenia",
+            "spain",
+            "sweden",
+            "switzerland",
+            "ukraine",
+            "united kingdom",
+            "vatican city"
+        ];
+
+        const africaCountries = [
+            "algeria",
+            "angola",
+            "benin",
+            "botswana",
+            "burkina faso",
+            "burundi",
+            "cabo verde",
+            "cameroon",
+            "chad",
+            "comoros",
+            "djibouti",
+            "egypt",
+            "equatorial guinea",
+            "eritrea",
+            "eswatini",
+            "ethiopia",
+            "gabon",
+            "gambia",
+            "ghana",
+            "guinea",
+            "guinea-bissau",
+            "kenya",
+            "lesotho",
+            "liberia",
+            "libya",
+            "madagascar",
+            "malawi",
+            "mali",
+            "mauritania",
+            "mauritius",
+            "morocco",
+            "mozambique",
+            "namibia",
+            "niger",
+            "nigeria",
+            "rwanda",
+            "senegal",
+            "seychelles",
+            "sierra leone",
+            "somalia",
+            "south africa",
+            "south sudan",
+            "sudan",
+            "tanzania",
+            "togo",
+            "tunisia",
+            "uganda",
+            "zambia",
+            "zimbabwe"
+        ];
+
+        const asiaCountries = [
+            "afghanistan",
+            "armenia",
+            "azerbaijan",
+            "bahrain",
+            "bangladesh",
+            "bhutan",
+            "brunei",
+            "cambodia",
+            "china",
+            "cyprus",
+            "india",
+            "indonesia",
+            "iran",
+            "iraq",
+            "israel",
+            "japan",
+            "jordan",
+            "kazakhstan",
+            "kuwait",
+            "kyrgyzstan",
+            "laos",
+            "lebanon",
+            "malaysia",
+            "maldives",
+            "mongolia",
+            "myanmar",
+            "nepal",
+            "north korea",
+            "oman",
+            "pakistan",
+            "philippines",
+            "qatar",
+            "saudi arabia",
+            "singapore",
+            "south korea",
+            "sri lanka",
+            "syria",
+            "tajikistan",
+            "thailand",
+            "timor-leste",
+            "turkey",
+            "turkmenistan",
+            "uzbekistan",
+            "vietnam",
+            "yemen"
+        ];
+
+        const northCountries = [
+            "antigua and barbuda",
+            "bahamas",
+            "barbados",
+            "belize",
+            "canada",
+            "costa rica",
+            "cuba",
+            "dominica",
+            "dominican republic",
+            "el salvador",
+            "grenada",
+            "guatemala",
+            "haiti",
+            "honduras",
+            "jamaica",
+            "mexico",
+            "nicaragua",
+            "panama",
+            "saint lucia",
+            "united states"
+        ];
+
+        const southCountries = [
+            "argentina",
+            "bolivia",
+            "brazil",
+            "chile",
+            "colombia",
+            "ecuador",
+            "guyana",
+            "paraguay",
+            "peru",
+            "suriname",
+            "uruguay",
+            "venezuela"
+        ];
+
+        const oceaniaCountries = [
+            "australia",
+            "fiji",
+            "kiribati",
+            "marshall islands",
+            "micronesia",
+            "nauru",
+            "new zealand",
+            "palau",
+            "papua new guinea",
+            "samoa",
+            "solomon islands",
+            "tonga",
+            "tuvalu",
+            "vanuatu"
+        ];
+            function isAlpha(str) {
+                return /^[A-Za-z]+$/.test(str);
+            }
+
             function getName(countryNames)
             {
-                const entries = Object.entries(dictionaryflag);
-                let name = entries[Math.floor(Math.random() * entries.length)];
-                return name
+                const name = countryNames[Math.floor(Math.random() * countryNames.length)];
+                return name;
             }
-            function createRow(countryName)
-            {
-                for (element of countryNames)
-                {
-                    let text = document.querySelector("#row");
-                    let card = document.createElement("");
-                    card.className = letter;
-                    text.appendChild()
 
+            function createWord(name)
+            {
+                let word = [];
+                for (let element of name)
+                {
+                    if (isAlpha(element))
+                    {
+                        word.push(element);
+                    }
+                    else{
+                    }
+                }
+                return word;
+            }
+            function createRow(word)
+            {
+                const inputRow = document.querySelector("#input-row");
+                let card;
+                let block;
+                let blocks = [];
+                let nextRow = document.createElement("div");
+                nextRow.className = 'nextRow';
+                for (let element of word)
+                {
+                    card = document.createElement("div");
+                    card.className = 'letter-box';
+                    blocks.push(card);
+                    nextRow.appendChild(card);    
+                }
+                inputRow.appendChild(nextRow);
+                return blocks;
+            }
+            function inputBox(blocks, name, word, input, round, message, hint, sorry, congrats)
+            {  
+                input.oninput = function() {
+                    input.value = input.value.replace(/[^a-z]/gi, "");
+                    var typedText = input.value.toUpperCase();
+                    for (let character = 0; character < blocks.length; character++)
+                    {
+                        blocks[character].textContent = typedText[character] || "";  //Updates when user backspaces                      
+                    } 
+                }
+                form.onsubmit = function(event){
+                    event.preventDefault();
+                    let guess = input.value.toLowerCase().replace(/[^a-z]/g, "");
+                    let validCountry = false;
+
+                    for (let country of countryNames) {
+                        if (country.replace(/[^a-z]/g, "") == guess) {
+                            validCountry = true;
+                            break;
+                        }
+                    }
+                    if (!validCountry) {
+                        message.style.visibility = 'visible';
+                        return;
+                    }
+
+                    message.style.visibility = 'hidden';
+
+                    let remainingLetters = [];
+                    let colors = [];
+
+                    for (let idx = 0; idx < word.length; idx++) {
+                        remainingLetters.push(word[idx].toLowerCase());
+                        colors.push("gray");
+                    }
+
+                    for (let idx = 0; idx < guess.length; idx++) {
+                        if (guess[idx] == word[idx].toLowerCase()) {
+                            colors[idx] = "seagreen";
+                            let matchIndex = remainingLetters.indexOf(guess[idx]);
+                            remainingLetters.splice(matchIndex, 1);
+                        }
+                    }
+
+                    for (let idx = 0; idx < guess.length; idx++) {
+                        if (colors[idx] != "seagreen") {
+                            let matchIndex = remainingLetters.indexOf(guess[idx]);
+
+                            if (matchIndex != -1) {
+                                colors[idx] = "yellow";
+                                remainingLetters.splice(matchIndex, 1);
+                            }
+                        }
+                    }
+
+                    let won = true;
+
+                    for (let idx = 0; idx < colors.length; idx++) {
+                        blocks[idx].style.backgroundColor = colors[idx];
+
+                        if (colors[idx] != "seagreen") {
+                            won = false;
+                        }
+                    }
+
+                    input.value = "";
+
+                    if (won) {
+                        let quitButton = document.querySelector('#quitButton');
+                        let tryAgain = document.querySelector("#tryAgain");
+                        form.innerHTML = "";
+                        hint.style.visibility = "hidden";
+                        quitButton.style.visibility = 'hidden';
+                        tryAgain.style.visibility  = 'visible';
+                        congrats.innerHTML = 'Congratulations! You guessed the country correctly!';
+                        return;
+                    }
+
+                    if (round <= 3) {
+                        round++;
+                        blocks = createRow(word);
+                        inputBox(blocks, name, word, input, round, message, hint, sorry, congrats);
+                    } else {
+                        let quitButton = document.querySelector('#quitButton');
+                        form.innerHTML = "";
+                        hint.style.visibility = 'hidden';
+                        quitButton.style.visibility = 'hidden';
+                        let tryAgain = document.querySelector("#tryAgain");
+                        tryAgain.style.visibility = 'visible';
+                        sorry.innerHTML = 'Sorry, the country was ' + name.toUpperCase();
+                    }
                 }
             }
-            let name = getName(countryNames);
-            createRow(name);
-            
-                
-        </script>
+            let tryAgain = document.querySelector("#tryAgain");
+            tryAgain.onclick = function (event)
+            {
+                location.reload();
+            }
+            const hintButton = document.querySelector("#hintButton")
+            hintButton.onclick = function (event){
+                event.preventDefault();
+                const hint = document.querySelector('#hint');
+                const hintButton = document.querySelector("#hintButton")  
+                if (oceaniaCountries.includes(name))
+                {
+                    hint.innerHTML = 'This country is in Oceania';
+                    hintButton.style.visibility = 'hidden';
+                    
+                }
+                if (southCountries.includes(name))
+                {
+                    hint.innerHTML = "This country is in South America";
+                    hintButton.style.visibility = "hidden";
+                }
+                if (africaCountries.includes(name))
+                {
+                    hint.innerHTML = 'This country is in Africa';
+                    hintButton.style.visibility = 'hidden';
+                    
+                }
+                if (europeCountries.includes(name))
+                {
+                    hint.innerHTML = 'This country is in Europe';
+                    hintButton.style.visibility = 'hidden';
+                    
+                }
+                if (asiaCountries.includes(name))
+                {
+                    hint.innerHTML = 'This country is in Asia';
+                    hintButton.style.visibility = 'hidden';
+                    
+                }
+                if (northCountries.includes(name))
+                {
+                    hint.innerHTML = 'This country is in North America';
+                    hintButton.style.visibility = 'hidden';
+                    
+                }
+            }
+            quitButton.onclick = function(event) {
+                event.preventDefault();
+                let quitButton = document.querySelector("#quitButton");
+                let sureMessage = document.querySelector("#sureMessage");
+                sureMessage.style.visibility = 'visible';
+                let sureRow = document.querySelector("#sureRow");
+                const sorry = document.querySelector("#sorry");
+                let yes = document.querySelector("#yes");
+                let no = document.querySelector("#no");
+                let hint = document.querySelector('#hint');
+                hint.style.visibility = 'hidden';
+                no.style.visibility = 'visible';
+                yes.style.visibility = 'visible';
+                quitButton.style.visibility = 'hidden';
+                hintButton.style.visibility = 'hidden';
+                yes.style.marginRight = '20px';
+                sureRow.appendChild(yes);
+                sureRow.appendChild(no);
+                yes.onclick = async function(event){
+                    sorry.innerHTML = 'Sorry, the country was ' + name.toUpperCase();
+                    sorry.style.visibility = 'visible';
+                    yes.style.visibility = 'hidden';
+                    no.style.visibility = 'hidden';
+                    quitButton.style.visibility = 'hidden';
+                    sureMessage.style.visibility = 'hidden';
+                    await sleep(2000);
+                    location.reload();
+                }
+                no.onclick = function(event){
+                    no.style.visibility = 'hidden';
+                    yes.style.visibility = 'hidden';
+                    hint.style.visibility = 'visible';
+                    hintButton.style.visibility = 'visible';
+                    quitButton.style.visibility = 'visible';
+                    sureMessage.style.visibility = 'hidden';
+                }
+            }
+            let sureMessage = document.querySelector("#sureMessage");
+            tryAgain.style.visibility = 'hidden';
+            let yes = document.querySelector("#yes");
+            let no = document.querySelector("#no");
+            sureMessage.style.visibility = 'hidden';
+            no.style.visibility = 'hidden';
+            yes.style.visibility = 'hidden';
+            const message = document.querySelector("#message");
+            const congrats = document.querySelector("#congrats");
+            const sorry = document.querySelector("#sorry");
+            message.style.visibility = 'hidden';
+            let name = getName(countryNames); 
+            let word = createWord(name);
+            let blocks = createRow(word)
+            let newRow = document.querySelector("#newRow");
+            let form = document.createElement("form");
+            let input = document.createElement("input");
+            input.type = 'text';
+            input.className = 'guess';
+            input.maxLength = word.length;
+            input.minLength = word.length;
+            input.required = 'true';
+            input.autocomplete = 'off';
+            form.appendChild(input);
+            newRow.appendChild(form);
+            inputBox(blocks, name, word, input, 0, message, hint, sorry, congrats);
         
+        </script> 
     </body>
     <script> 
         let isEurope = false;
         let isAsia = false;
-        let isNorthA = true;
+        let isNorthA = false;
         let isOceania = false;
         let isSouthA = false;
         let isAfrica = false;
