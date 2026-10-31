@@ -19,16 +19,24 @@
             const accuracy = document.querySelector("#accuracy");
             const pic = document.querySelector("#pic");
             const result = JSON.parse(sessionStorage.getItem('quizResult'));
+            const complete = JSON.parse(sessionStorage.getItem('quizComplete'));
             if (result)
             {
                 const percent = Math.round((result.correct / result.total) * 100);
-                accuracy.textContent = 'Congrats! You answered ' + result.correct + '/' + result.total + ' flags with an accuracy of ' + percent + '%';
+                if (complete)
+                {
+                    accuracy.textContent = 'Congrats! You completed the quiz with a score of ' + result.correct + '/' + result.total + ' or ' + percent + '%';
+                }
+                else
+                {
+                    accuracy.textContent = 'Congrats! You answered ' + result.correct + '/' + result.total + ' flags with an accuracy of ' + percent + '%';
+                }
                 const img = document.createElement("img");
                 img.style.width = '600px';
                 img.style.height = '300px';
                 img.style.marginBottom = '20px';
-                img.src = 'https://tse1.mm.bing.net/th/id/OIP.tYl9RWWJo3Orvwsu4JXQUwHaEo?r=0&pid=Api&h=220&P=0';
-                img.alt = 'Flag image';
+                img.src = 'congrats.png';
+                img.alt = 'Flags  image';
                 pic.appendChild(img);
             }
         </script>

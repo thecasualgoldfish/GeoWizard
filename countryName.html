@@ -17,12 +17,13 @@
         <div id = "input-row"></div>
         <div id = "newRow"></div>
         <div id="message">Please enter a UN recognized country or click the button for a hint!</div>
+        <div id = "messagelength" class="center">Please enter a country name long enough!</div>
         <div id="congrats" class="center"></div>
         <div id= "sorry" class="center"></div>
         <div id = 'hint' class = 'center'>
-                <button id = 'hintButton'>
-                    HINT
-                </button>
+            <button id = 'hintButton'>
+                HINT
+            </button>
         </div>
         <div class = 'center'>
             <button id = "tryAgain">
@@ -442,6 +443,15 @@
                 return name;
             }
 
+            function createWordSpace(name)
+            {
+                let wordSpace = [];
+                for (let element of name)
+                {
+                    wordSpace.push(element);  
+                }
+                return wordSpace;
+            }
             function createWord(name)
             {
                 let word = [];
@@ -449,35 +459,49 @@
                 {
                     if (isAlpha(element))
                     {
-                        word.push(element);
+                        word.push(element);  
                     }
-                    else{
+                    else
+                    {
+
                     }
                 }
                 return word;
             }
-            function createRow(word)
+            function createRow(wordSpace)
             {
                 const inputRow = document.querySelector("#input-row");
                 let card;
                 let block;
                 let blocks = [];
+                let space = [];
                 let nextRow = document.createElement("div");
                 nextRow.className = 'nextRow';
-                for (let element of word)
+                for (let element of wordSpace)
                 {
-                    card = document.createElement("div");
-                    card.className = 'letter-box';
-                    blocks.push(card);
-                    nextRow.appendChild(card);    
+                    if (isAlpha(element))
+                    {
+                        card = document.createElement("div");
+                        card.className = 'letter-box';
+                        blocks.push(card);
+                        nextRow.appendChild(card);   
+                    } 
+                    else
+                    {
+                        card = document.createElement("div");
+                        card.className = 'letter-space';
+                        space.push(card);
+                        nextRow.appendChild(card);  
+                    }
                 }
                 inputRow.appendChild(nextRow);
                 return blocks;
             }
-            function inputBox(blocks, name, word, input, round, message, hint, sorry, congrats)
+            function inputBox(blocks, name, word, input, round, message, hint, sorry, congrats, wordSpace, messagelength)
             {  
+                
                 input.oninput = function() {
-                    input.value = input.value.replace(/[^a-z]/gi, "");
+                    input.value = input.value.replace(/\s/g, "");
                     var typedText = input.value.toUpperCase();
                     for (let character = 0; character < blocks.length; character++)
                     {
@@ -486,11 +510,16 @@
                 }
                 form.onsubmit = function(event){
                     event.preventDefault();
+                    if (word.length != input.value.length)
+                    {
+                        messagelength.style.visibility = 'visible';
+                        return;
+                    }
                     let guess = input.value.toLowerCase().replace(/[^a-z]/g, "");
                     let validCountry = false;
-
                     for (let country of countryNames) {
-                        if (country.replace(/[^a-z]/g, "") == guess) {
+                        if (country.replace(/[^a-z]/g, "") == guess)
+                        {
                             validCountry = true;
                             break;
                         }
@@ -501,6 +530,7 @@
                     }
 
                     message.style.visibility = 'hidden';
+                    messagelength.style.visibility = 'hidden';
 
                     let remainingLetters = [];
                     let colors = [];
@@ -554,8 +584,8 @@
 
                     if (round <= 3) {
                         round++;
-                        blocks = createRow(word);
-                        inputBox(blocks, name, word, input, round, message, hint, sorry, congrats);
+                        blocks = createRow(wordSpace);
+                        inputBox(blocks, name, word, input, round, message, hint, sorry, congrats, wordSpace, messagelength);
                     } else {
                         let quitButton = document.querySelector('#quitButton');
                         form.innerHTML = "";
@@ -638,7 +668,7 @@
                     no.style.visibility = 'hidden';
                     quitButton.style.visibility = 'hidden';
                     sureMessage.style.visibility = 'hidden';
-                    await sleep(2000);
+                    await sleep(1800);
                     location.reload();
                 }
                 no.onclick = function(event){
@@ -650,6 +680,7 @@
                     sureMessage.style.visibility = 'hidden';
                 }
             }
+        
             let sureMessage = document.querySelector("#sureMessage");
             tryAgain.style.visibility = 'hidden';
             let yes = document.querySelector("#yes");
@@ -663,10 +694,13 @@
             message.style.visibility = 'hidden';
             let name = getName(countryNames); 
             let word = createWord(name);
-            let blocks = createRow(word)
+            let wordSpace = createWordSpace(name);
+            let blocks = createRow(wordSpace)
             let newRow = document.querySelector("#newRow");
             let form = document.createElement("form");
             let input = document.createElement("input");
+            let messagelength = document.querySelector("#messagelength");
+            messagelength.style.visibility = 'hidden';
             input.type = 'text';
             input.className = 'guess';
             input.maxLength = word.length;
@@ -675,8 +709,8 @@
             input.autocomplete = 'off';
             form.appendChild(input);
             newRow.appendChild(form);
-            inputBox(blocks, name, word, input, 0, message, hint, sorry, congrats);
-        
+            inputBox(blocks, name, word, input, 0, message, hint, sorry, congrats, wordSpace, messagelength);
+          
         </script> 
     </body>
     <script> 
