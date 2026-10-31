@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+    <link href="style.css" rel="stylesheet">
     <head>
-        <link href="style.css" rel="stylesheet">
-        <title id="title">
-            Country Outlines
+        <title>
+            Difficulty Selector
         </title>
         <header class="logorow">
             <a href="index.html" class= "link"><h4 class="logo">GeoWizard</h4></a>
             <a href="dailygame.html" class="link">Games</a>
             <a href="flagpractice.html" class="link">Flag Practice</a>
             <a href="flagquiz.html" class="link">Flag Quiz</a>
-        </header>        
+        </header>      
     </head>
-    <body>
+    <body >
+        <div class="titles">Country Outline Quiz</div>
+        <div id="statementquiz">
+            Pick your difficulty
+        </div>
+        <div class="card-row">
+            <a href="easyOutlines.html" id="easycard" class="text-card">
+                <h1 class="card-title">Easy</h1>
+                <p class="card-text">Do you know some basic outlines?</p>
+            </a>
+            <a href="mediumOutlines.html" id="mediumcard" class="text-card">
+                <h1 class="card-title">Medium</h1>
+                <p class="card-text">Increasing in difficulty... can you still succeed?</p>
+            </a>
+            <a href="hardOutlines.html" id="hardcard" class="text-card">
+                <h1 class="card-title">Hard</h1>
+                <p class="card-text">Are you up for the challenge?</p>
+            </a>      
+        </div>    
     </body>
     <script> 
         let isEurope = false;
@@ -20,10 +38,11 @@
         let isNorthA= false;
         let isOceania = false;
         let isSouthA = false;
-        let isAfrica = true;
+        let isAfrica = false;
         let isEasy = false;
         let isMedium = false;
         let isHard = false;
+        let hint = false; 
     </script>
     <script src="script.js"></script>
     <footer class="flagfooter">
