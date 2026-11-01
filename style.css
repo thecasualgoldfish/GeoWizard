@@ -8,7 +8,7 @@ header
 }
 .logo
 {
-    margin-right: 790px;
+    margin-right: 890px;
     margin-left: 0px;
     margin-top: 0;
     margin-bottom: 0;
@@ -35,7 +35,7 @@ body
     border-image-width: 520px;
     height: 260px;
     margin-left: 50px;
-    margin-right: 40px
+    margin-right: 50px
 }
 #flagofUK
 {
@@ -130,6 +130,7 @@ body
 .card-title
 {
     color: white;
+    margin-bottom: none;
 }
 .card-text
 {
@@ -152,6 +153,13 @@ body
     border-color: black;
 }
 .titles
+{
+    text-align: center;
+    font-size: xx-large;
+    display: flex;
+    justify-content: center;
+}
+#title
 {
     text-align: center;
     font-size: xx-large;
@@ -222,21 +230,20 @@ body
     flex: 0 0 50px;
     height: 50px;;
     border: 1px solid #e0e0e0;
-    margin: 10px;
+    margin: 5px;
     margin-top: 50px;
     text-decoration: none;
     background-color: whitesmoke;
 }
 .letter-space
 {
-    flex: 0 0 25px;
+    flex: 0 0 10px;
     height: 50px;;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: white;
     margin: 10px;
     margin-top: 50px;
     text-decoration: none;
-    background-color: red;
+    background-color: whitesmoke;
 }
 .letter-box
 {
@@ -306,4 +313,33 @@ body
 #sureMessage {
     margin-top: 20px;
     margin-bottom: 20px;
+}
+#text-box
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 30px;
+}
+#flagf
+{
+    margin-top: 230px;
+    margin-left: 40px;
+}
+#top-text
+{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#card-text
+{
+    color: white;
+    font-size: medium;
+    margin-top: 0px;
+}
+#quest
+{
+    margin-right: 20px;
 }

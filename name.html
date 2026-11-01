@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <title id="title">
+            Name the country!
+        </title>
+        <header class="logorow">
+            <a href="index.html" class= "link"><h4 class="logo">GeoWizard</h4></a>
+            <a href="dailygame.html" class="link">Games</a>
+            <a href="flagpractice.html" class="link">Flag Practice</a>
+            <a href="quizSelector.html" class="link">Quizzes</a>
+        </header>        
+    </head>
+    <body id="quiz">
+        <div class="titles">Name the Country</div>
+        <div id="top-text" class ='center'></div>
+        <form id="text-box">
+            <input id = 'text' type="text">
+        </form>
+        <div id = "message" class = 'center'>Correct!</div>
+        <div id="sorryMessage" class="center"></div>
+        <div id="currentScore" class="center"></div>
+        
+    </body>
+    <script>
+        const countryNames = [
+            'afghanistan',
+            'albania',
+            'algeria',
+            'andorra',
+            'angola',
+            'antigua and barbuda',
+            'argentina',
+            'armenia',
+            'australia',
+            'austria',
+            'azerbaijan',
+            'bahamas',
+            'bahrain',
+            'bangladesh',
+            'barbados',
+            'belarus',
+            'belgium',
+            'belize',
+            'benin',
+            'bhutan',
+            'bolivia',
+            'bosnia and herzegovina',
+            'botswana',
+            'brazil',
+            'brunei',
+            'bulgaria',
+            'burkina faso',
+            'burundi',
+            'cabo verde',
+            'cambodia',
+            'cameroon',
+            'canada',
+            'chad',
+            'chile',
+            'china',
+            'colombia',
+            'comoros',
+            'costa rica',
+            'croatia',
+            'cuba',
+            'cyprus',
+            'czechia',
+            'denmark',
+            'djibouti',
+            'dominica',
+            'dominican republic',
+            'ecuador',
+            'egypt',
+            'el salvador',
+            'equatorial guinea',
+            'eritrea',
+            'estonia',
+            'eswatini',
+            'ethiopia',
+            'fiji',
+            'finland',
+            'france',
+            'gabon',
+            'gambia',
+            'georgia',
+            'germany',
+            'ghana',
+            'greece',
+            'grenada',
+            'guatemala',
+            'guinea',
+            'guyana',
+            'haiti',
+            'honduras',
+            'hungary',
+            'iceland',
+            'india',
+            'indonesia',
+            'iran',
+            'iraq',
+            'ireland',
+            'israel',
+            'italy',
+            'jamaica',
+            'japan',
+            'jordan',
+            'kazakhstan',
+            'kenya',
+            'kiribati',
+            'kuwait',
+            'kyrgyzstan',
+            'laos',
+            'latvia',
+            'lebanon',
+            'lesotho',
+            'liberia',
+            'libya',
+            'liechtenstein',
+            'lithuania',
+            'luxembourg',
+            'madagascar',
+            'malawi',
+            'malaysia',
+            'maldives',
+            'mali',
+            'malta',
+            'marshall islands',
+            'mauritania',
+            'mauritius',
+            'mexico',
+            'micronesia',
+            'moldova',
+            'monaco',
+            'mongolia',
+            'montenegro',
+            'morocco',
+            'mozambique',
+            'myanmar',
+            'namibia',
+            'nauru',
+            'nepal',
+            'netherlands',
+            'new zealand',
+            'nicaragua',
+            'niger',
+            'nigeria',
+            'north korea',
+            'north macedonia',
+            'norway',
+            'oman',
+            'pakistan',
+            'palau',
+            'panama',
+            'papua new guinea',
+            'paraguay',
+            'peru',
+            'philippines',
+            'poland',
+            'portugal',
+            'qatar',
+            'romania',
+            'russia',
+            'rwanda',
+            'saint lucia',
+            'samoa',
+            'san marino',
+            'saudi arabia',
+            'senegal',
+            'serbia',
+            'seychelles',
+            'sierra leone',
+            'singapore',
+            'slovakia',
+            'slovenia',
+            'solomon islands',
+            'somalia',
+            'south africa',
+            'south korea',
+            'south sudan',
+            'spain',
+            'sri lanka',
+            'sudan',
+            'suriname',
+            'sweden',
+            'switzerland',
+            'syria',
+            'tajikistan',
+            'tanzania',
+            'thailand',
+            'togo',
+            'tonga',
+            'tunisia',
+            'turkey',
+            'turkmenistan',
+            'tuvalu',
+            'uganda',
+            'ukraine',
+            'united kingdom',
+            'united states',
+            'uruguay',
+            'uzbekistan',
+            'vanuatu',
+            'vatican city',
+            'venezuela',
+            'vietnam',
+            'yemen',
+            'zambia',
+            'zimbabwe'
+        ];
+
+        function changeTop(topText, letter)
+        {
+            topText.textContent = "Name a country starting with the letter " + letter;
+        }
+        let topText = document.querySelector("#top-text");
+        let message = document.querySelector("#message");
+        let sorryMessage = document.querySelector("#sorryMessage");
+        let form = document.querySelector("#text-box");
+        let input = document.querySelector("#text");
+        let current = document.querySelector("#currentScore");
+        let correct = 0;
+        let total = 0;
+        let right = false;
+        let i = 65;
+        function sleep(time)
+        {
+            return new Promise((resolve) => setTimeout(resolve, time));
+        }
+        function changeLetter(topText, message, sorryMessage, i, current) 
+        {
+            if (i > 90)
+            {
+                sessionStorage.setItem('quizResult', JSON.stringify({correct , total}));
+                sessionStorage.setItem('quizComplete', true);
+                window.location.href = 'congrats.html';
+            }
+            if (i == 88)
+            {
+                i++;
+            }
+            let letter = String.fromCharCode(i);
+            message.style.visibility = 'hidden';
+            sorryMessage.style.visibility = 'hidden';
+            topText.innerHTML = "Name a country starting with the letter " + letter;
+            if (i > 65)
+            {
+                current.innerHTML = "Your current score is " + correct + "/" + total;
+            }
+        }
+        form.onsubmit = async function(event)
+        {
+            let letter = String.fromCharCode(i);
+            event.preventDefault();
+            if (countryNames.includes(input.value.trim().toLowerCase()) && input.value.startsWith(letter.toLowerCase()))
+            {
+                message.style.visibility = 'visible';
+                i++;
+                correct++;
+                await sleep(1000);
+                input.value = "";
+            }
+            else
+            {
+                sorryMessage.innerHTML = 'Sorry, incorrect';
+                sorryMessage.style.visibility = 'visible';
+                i++;
+                await sleep(1000);
+                input.value = "";
+            }
+            total++;
+            changeLetter(topText, message, sorryMessage, i, current);
+        } 
+        changeLetter(topText, message, sorryMessage, i, current); 
+        let isHard = false;
+        let hint = false;
+        let isEasy = false;
+        let isMedium = false;
+    </script>
+    <script src="script.js"></script>
+    <footer id="flagf">
+        <img src="https://flagsapi.com/US/flat/64.png">
+        <img src="https://flagsapi.com/GB/flat/64.png">
+        <img src="https://flagsapi.com/BE/flat/64.png">
+        <img src="https://flagsapi.com/BR/flat/64.png">
+        <img src="https://flagsapi.com/PL/flat/64.png">
+        <img src="https://flagsapi.com/PK/flat/64.png">
+        <img src="https://flagsapi.com/RU/flat/64.png">
+        <img src="https://flagsapi.com/PH/flat/64.png">
+        <img src="https://flagsapi.com/JP/flat/64.png">
+        <img src="https://flagsapi.com/RW/flat/64.png">
+        <img src="https://flagsapi.com/SE/flat/64.png">
+        <img src="https://flagsapi.com/RS/flat/64.png">
+        <img src="https://flagsapi.com/RO/flat/64.png">
+        <img src="https://flagsapi.com/SG/flat/64.png">
+        <img src="https://flagsapi.com/KH/flat/64.png">
+        <img src="https://flagsapi.com/KR/flat/64.png">
+        <img src="https://flagsapi.com/MA/flat/64.png">
+        <img src="https://flagsapi.com/SG/flat/64.png">
+        <img src="https://flagsapi.com/KZ/flat/64.png">
+        <img src="https://flagsapi.com/LA/flat/64.png">
+    </footer>
+</html>

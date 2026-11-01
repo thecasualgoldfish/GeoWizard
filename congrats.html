@@ -9,7 +9,7 @@
             <a href="index.html" class= "link"><h4 class="logo">GeoWizard</h4></a>
             <a href="dailygame.html" class="link">Games</a>
             <a href="flagpractice.html" class="link">Flag Practice</a>
-            <a href="flagquiz.html" class="link">Flag Quiz</a>
+            <a href="quizSelector.html" class="link">Quizzes</a>
         </header>        
     </head>
     <body>
@@ -29,14 +29,14 @@
                 }
                 else
                 {
-                    accuracy.textContent = 'Congrats! You answered ' + result.correct + '/' + result.total + ' flags with an accuracy of ' + percent + '%';
+                    accuracy.textContent = 'Congrats! You answered ' + result.correct + '/' + result.total + ' items with an accuracy of ' + percent + '%';
                 }
                 const img = document.createElement("img");
                 img.style.width = '600px';
                 img.style.height = '300px';
                 img.style.marginBottom = '20px';
-                img.src = 'congrats.png';
-                img.alt = 'Flags  image';
+                img.alt = 'Flags image';
+                img.src = 'flagimag.jpg';
                 pic.appendChild(img);
             }
         </script>
