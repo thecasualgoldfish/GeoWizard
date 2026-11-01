@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <title id="title">
+            Medium Capitals Quiz
+        </title>
+        <header class="logorow">
+            <a href="index.html" class= "link"><h4 class="logo">GeoWizard</h4></a>
+            <a href="dailygame.html" class="link">Games</a>
+            <a href="flagpractice.html" class="link">Flag Practice</a>
+            <a href="quizSelector.html" class="link">Quizzes</a>
+        </header>        
+    </head>
+    <body id="quiz">
+        <div class="titles">Medium Capitals Quiz</div>
+        <div id="top-text" class ='center'></div>
+        <form id="text-box">
+            <input id = 'text' type="text">
+        </form>
+        <div id = "correct" class = 'center'>Correct!</div>
+        <div id="sorryMessage" class="center"></div>
+        <div class="stop">
+            <a id="change">
+                <button id="stop">Stop</button>
+            </a>  
+        </div>
+        <div id="currentScore" class="center"></div>
+        
+    </body>
+    <script>
+        const mediumCapitals = {
+            Albania: "Tirana",
+            Algeria: "Algiers",
+            Angola: "Luanda",
+            Armenia: "Yerevan",
+            Azerbaijan: "Baku",
+            Bahamas: "Nassau",
+            Belarus: "Minsk",
+            Bolivia: "Sucre",
+            Bosnia_and_Herzegovina: "Sarajevo",
+            Botswana: "Gaborone",
+            Bulgaria: "Sofia",
+            Cambodia: "Phnom Penh",
+            Cameroon: "Yaounde",
+            Costa_Rica: "San Jose",
+            Croatia: "Zagreb",
+            Czechia: "Prague",
+            Dominican_Republic: "Santo Domingo",
+            Ecuador: "Quito",
+            El_Salvador: "San Salvador",
+            Estonia: "Tallinn",
+            Ethiopia: "Addis Ababa",
+            Ghana: "Accra",
+            Guatemala: "Guatemala City",
+            Haiti: "Port-au-Prince",
+            Honduras: "Tegucigalpa",
+            Hungary: "Budapest",
+            Iceland: "Reykjavik",
+            Jordan: "Amman",
+            Kazakhstan: "Astana",
+            Kuwait: "Kuwait City",
+            Lebanon: "Beirut",
+            Libya: "Tripoli",
+            Lithuania: "Vilnius",
+            Madagascar: "Antananarivo",
+            Malawi: "Lilongwe",
+            Mali: "Bamako",
+            Malta: "Valletta",
+            Mongolia: "Ulaanbaatar",
+            Montenegro: "Podgorica",
+            Mozambique: "Maputo",
+            Myanmar: "Naypyidaw",
+            Namibia: "Windhoek",
+            Nepal: "Kathmandu",
+            Nicaragua: "Managua",
+            Oman: "Muscat",
+            Panama: "Panama City",
+            Paraguay: "Asuncion",
+            Qatar: "Doha",
+            Romania: "Bucharest",
+            Serbia: "Belgrade",
+            Slovakia: "Bratislava",
+            Slovenia: "Ljubljana",
+            Somalia: "Mogadishu",
+            Sri_Lanka: "Sri Jayawardenepura Kotte",
+            Sudan: "Khartoum",
+            Syria: "Damascus",
+            Tanzania: "Dodoma",
+            Tunisia: "Tunis",
+            Uganda: "Kampala",
+            Uruguay: "Montevideo",
+            Uzbekistan: "Tashkent",
+            Venezuela: "Caracas",
+            Yemen: "Sanaa",
+            Zambia: "Lusaka",
+            Zimbabwe: "Harare"
+        };
+
+        function sleep(time)
+        {
+            return new Promise((resolve) => setTimeout(resolve, time));
+        }
+
+        function randomCountry(mediumCapitals, previousCapitals)
+        {
+            const countries = Object.keys(mediumCapitals);
+            let name = countries[Math.floor(Math.random() * countries.length)];
+            let capital = mediumCapitals[name];
+            while (previousCapitals.includes(name))
+            {
+                name = countries[Math.floor(Math.random() * countries.length)];
+                capital = easyCapitals[name];    
+            }
+            return [name, capital];
+        }
+        let correct = 0;
+        let total = 0;
+        const guessInput = document.querySelector("#text");
+        let previousCapitals = [];
+
+        function changeCountryCapital(mediumCapitals, previousCapitals) {
+            let right = document.querySelector("#correct");
+            let sorry = document.querySelector("#sorryMessage");
+            const form = document.querySelector("#text-box");
+            const stop = document.querySelector("#stop");
+            let change = document.querySelector("#change");
+            let topText = document.querySelector("#top-text");
+            let current = document.querySelector("#currentScore");
+            const [country, capital] = randomCountry(mediumCapitals, previousCapitals);
+            topText.innerHTML = 'What is the capital of ' + country.replaceAll("_", " ") + '?'; 
+
+            right.style.visibility = 'hidden';
+            sorry.style.visibility = 'hidden';
+        
+            form.onsubmit = async function (event) {
+                event.preventDefault();
+                if (mediumCapitals[country].toLowerCase().replaceAll("_", " ") == guessInput.value.toLowerCase().trim())
+                {
+                    right.style.visibility = 'visible';
+                    guessInput.value = "";
+                    await sleep(750);
+                    correct++;
+                    
+                }
+                else
+                {
+                    sorry.style.visibility = 'visible';
+                    guessInput.value = "";
+                    sorry.innerHTML = 'Incorrect, it is ' + mediumCapitals[country].replaceAll("_", " ");
+                    await sleep(1500);
+                }
+                total++;
+                previousCapitals.push(country);
+                if (previousCapitals.length == (Object.keys(mediumCapitals).length))
+                {
+                    sessionStorage.setItem('quizResult', JSON.stringify({correct , total}));
+                    sessionStorage.setItem('quizComplete', true);
+                    window.location.href = "congrats.html";
+                    return;
+                }
+                else 
+                {
+                    changeCountryCapital(mediumCapitals, previousCapitals);
+                }
+            }
+            stop.onclick = async function (event) {
+                if (total == 0)
+                {
+                    alert("Please answer atleast 1 question.");
+                    return;
+                }
+                change.href = 'congrats.html';
+                sessionStorage.setItem('quizResult', JSON.stringify({correct , total}));
+            }
+        }
+        changeCountryCapital(mediumCapitals, previousCapitals);  
+        
+        let isHard = false;
+        let hint = false;
+        let isEasy = false;
+        let isMedium = false;
+    </script>
+    <script src="script.js"></script>
+    <footer id="flagf">
+        <img src="https://flagsapi.com/US/flat/64.png">
+        <img src="https://flagsapi.com/GB/flat/64.png">
+        <img src="https://flagsapi.com/BE/flat/64.png">
+        <img src="https://flagsapi.com/BR/flat/64.png">
+        <img src="https://flagsapi.com/PL/flat/64.png">
+        <img src="https://flagsapi.com/PK/flat/64.png">
+        <img src="https://flagsapi.com/RU/flat/64.png">
+        <img src="https://flagsapi.com/PH/flat/64.png">
+        <img src="https://flagsapi.com/JP/flat/64.png">
+        <img src="https://flagsapi.com/RW/flat/64.png">
+        <img src="https://flagsapi.com/SE/flat/64.png">
+        <img src="https://flagsapi.com/RS/flat/64.png">
+        <img src="https://flagsapi.com/RO/flat/64.png">
+        <img src="https://flagsapi.com/SG/flat/64.png">
+        <img src="https://flagsapi.com/KH/flat/64.png">
+        <img src="https://flagsapi.com/KR/flat/64.png">
+        <img src="https://flagsapi.com/MA/flat/64.png">
+        <img src="https://flagsapi.com/SG/flat/64.png">
+        <img src="https://flagsapi.com/KZ/flat/64.png">
+        <img src="https://flagsapi.com/LA/flat/64.png">
+    </footer>
+</html>

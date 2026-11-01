@@ -873,6 +873,17 @@ const oceaniaFlags = {
     Vanuatu: flag("vu"),
     Wallis_and_Futuna: flag("wf"),
 };
+const allFlags = {
+    ...easyflags,
+    ...mediumflags,
+    ...hardflags,
+    ...europeFlags,
+    ...africaFlags,
+    ...asiaFlags,
+    ...northFlags,
+    ...southFlags,
+    ...oceaniaFlags,
+};
 
 let total = 0;
 let correct = 0;
@@ -890,7 +901,7 @@ function getRandomCountry(dictionaryflag, previousFlags)
     let image = entries[Math.floor(Math.random() * entries.length)];
     while (previousFlags.includes(image[0]))
     {
-        const entries = Object.entries(dictionaryflag);
+        entries = Object.entries(dictionaryflag);
         image = entries[Math.floor(Math.random() * entries.length)];
     }
     
@@ -936,41 +947,55 @@ function changeCountry(dictionaryflag, previousFlags) {
     form.onsubmit = async function (event) {
         event.preventDefault();
         const answer = guessInput.value.trim().toLowerCase().replaceAll(" ", "_");
-        if (answer == country.toLowerCase() || country == 'UAE' && answer == 'united_arab_emirates' || country == 'US' && (answer == 'united_states' || answer == 'united_states_of_america' || answer == 'usa') || country == 'UK' && answer == 'united_kingdom' || country == 'Democratic_Republic_of_Congo' && answer == "drc") {
+        if (answer == country.toLowerCase() || country == 'UAE' && answer == 'united_arab_emirates' || country == 'US' && (answer == 'united_states' || answer == 'united_states_of_america' || answer == 'usa') || country == 'UK' && answer == 'united_kingdom' || country == 'Democratic_Republic_of_Congo' && answer == "drc" || country == "Saint_Lucia" && "st_lucia") {
             right.style.visibility = 'visible';
-            await sleep(750);
+            if (dont)
+            {
+
+            }
+            else
+            {
+                await sleep(750);
+            }
             correct++;
         } 
         else 
         {
             sorry.style.visibility = 'visible';
             sorry.innerHTML = 'Incorrect, this is ' + country.replaceAll("_", " ");
-            await sleep(2000);
-
+            if (dont)
+            {
+            }
+            else
+            {
+                await sleep(1500);
+            }
         }
         total++;
         guessInput.value = "";
         previousFlags.push(country);
-        if (previousFlags.length == (Object.keys(dictionaryflag).length))
+        if (previousFlags.length == (Object.keys(dictionaryflag).length) || daily)
         {
             sessionStorage.setItem('quizResult', JSON.stringify({correct , total}));
             sessionStorage.setItem('quizComplete', true);
             window.location.href = "congrats.html";
             return;
         }
-        else
+        else 
         {
             changeCountry(dictionaryflag, previousFlags);
         }
     }
-    stop.onclick = async function (event) {
-        if (total == 0)
-        {
-            alert("Please answer atleast 1 question.");
-            return;
+    if (stop && change) {
+        stop.onclick = async function (event) {
+            if (total == 0)
+            {
+                alert("Please answer atleast 1 question.");
+                return;
+            }
+            change.href = 'congrats.html';
+            sessionStorage.setItem('quizResult', JSON.stringify({correct , total}));
         }
-        change.href = 'congrats.html';
-        sessionStorage.setItem('quizResult', JSON.stringify({correct , total}));
     }
     hintButton.onclick = function (event){
         event.preventDefault();

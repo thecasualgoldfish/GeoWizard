@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <title id="title">
+            State Capitals Quiz
+        </title>
+        <header class="logorow">
+            <a href="index.html" class= "link"><h4 class="logo">GeoWizard</h4></a>
+            <a href="dailygame.html" class="link">Games</a>
+            <a href="flagpractice.html" class="link">Flag Practice</a>
+            <a href="quizSelector.html" class="link">Quizzes</a>
+        </header>        
+    </head>
+    <body id="quiz">
+        <div class="titles">State Capitals Quiz</div>
+        <div id="top-text" class ='center'></div>
+        <form id="text-box">
+            <input id = 'text' type="text">
+        </form>
+        <div id = "correct" class = 'center'>Correct!</div>
+        <div id="sorryMessage" class="center"></div>
+        <div class="stop">
+            <a id="change">
+                <button id="stop">Stop</button>
+            </a>  
+        </div>
+        <div id="currentScore" class="center"></div> 
+    </body>
+    <script>
+        const stateCapitals = {
+            Alabama: "Montgomery",
+            Alaska: "Juneau",
+            Arizona: "Phoenix",
+            Arkansas: "Little Rock",
+            California: "Sacramento",
+            Colorado: "Denver",
+            Connecticut: "Hartford",
+            Delaware: "Dover",
+            Florida: "Tallahassee",
+            Georgia: "Atlanta",
+            Hawaii: "Honolulu",
+            Idaho: "Boise",
+            Illinois: "Springfield",
+            Indiana: "Indianapolis",
+            Iowa: "Des Moines",
+            Kansas: "Topeka",
+            Kentucky: "Frankfort",
+            Louisiana: "Baton Rouge",
+            Maine: "Augusta",
+            Maryland: "Annapolis",
+            Massachusetts: "Boston",
+            Michigan: "Lansing",
+            Minnesota: "Saint Paul",
+            Mississippi: "Jackson",
+            Missouri: "Jefferson City",
+            Montana: "Helena",
+            Nebraska: "Lincoln",
+            Nevada: "Carson City",
+            New_Hampshire: "Concord",
+            New_Jersey: "Trenton",
+            New_Mexico: "Santa Fe",
+            New_York: "Albany",
+            North_Carolina: "Raleigh",
+            North_Dakota: "Bismarck",
+            Ohio: "Columbus",
+            Oklahoma: "Oklahoma City",
+            Oregon: "Salem",
+            Pennsylvania: "Harrisburg",
+            Rhode_Island: "Providence",
+            South_Carolina: "Columbia",
+            South_Dakota: "Pierre",
+            Tennessee: "Nashville",
+            Texas: "Austin",
+            Utah: "Salt Lake City",
+            Vermont: "Montpelier",
+            Virginia: "Richmond",
+            Washington: "Olympia",
+            West_Virginia: "Charleston",
+            Wisconsin: "Madison",
+            Wyoming: "Cheyenne"
+        };
+
+        function sleep(time)
+        {
+            return new Promise((resolve) => setTimeout(resolve, time));
+        }
+
+        function randomCountry(stateCapitals, previousCapitals)
+        {
+            const countries = Object.keys(stateCapitals);
+            let name = countries[Math.floor(Math.random() * countries.length)];
+            let capital = stateCapitals[name];
+            while (previousCapitals.includes(name))
+            {
+                name = countries[Math.floor(Math.random() * countries.length)];
+                capital = stateCapitals[name];    
+            }
+            return [name, capital];
+        }
+        let correct = 0;
+        let total = 0;
+        const guessInput = document.querySelector("#text");
+        let previousCapitals = [];
+
+        function changeCountryCapital(stateCapitals, previousCapitals) {
+            let right = document.querySelector("#correct");
+            let sorry = document.querySelector("#sorryMessage");
+            const form = document.querySelector("#text-box");
+            const stop = document.querySelector("#stop");
+            let change = document.querySelector("#change");
+            let topText = document.querySelector("#top-text");
+            let current = document.querySelector("#currentScore");
+            const [country, capital] = randomCountry(stateCapitals, previousCapitals);
+            topText.innerHTML = 'What is the capital of ' + country.replaceAll("_", " ") + '?'; 
+
+            right.style.visibility = 'hidden';
+            sorry.style.visibility = 'hidden';
+        
+            form.onsubmit = async function (event) {
+                event.preventDefault();
+                if (stateCapitals[country].toLowerCase().replaceAll("_", " ") == guessInput.value.toLowerCase().trim())
+                {
+                    right.style.visibility = 'visible';
+                    guessInput.value = "";
+                    await sleep(750);
+                    correct++;
+                    
+                }
+                else
+                {
+                    sorry.style.visibility = 'visible';
+                    guessInput.value = "";
+                    sorry.innerHTML = 'Incorrect, it is ' + stateCapitals[country].replaceAll("_", " ");
+                    await sleep(1500);
+                }
+                total++;
+                previousCapitals.push(country);
+                if (previousCapitals.length == (Object.keys(stateCapitals).length))
+                {
+                    sessionStorage.setItem('quizResult', JSON.stringify({correct , total}));
+                    sessionStorage.setItem('quizComplete', true);
+                    window.location.href = "congrats.html";
+                    return;
+                }
+                else 
+                {
+                    changeCountryCapital(stateCapitals, previousCapitals);
+                }
+            }
+            stop.onclick = async function (event) {
+                if (total == 0)
+                {
+                    alert("Please answer atleast 1 question.");
+                    return;
+                }
+                change.href = 'congrats.html';
+                sessionStorage.setItem('quizResult', JSON.stringify({correct , total}));
+            }
+        }
+        changeCountryCapital(stateCapitals, previousCapitals);  
+        
+        let isHard = false;
+        let hint = false;
+        let isEasy = false;
+        let isMedium = false;
+    </script>
+    <script src="script.js"></script>
+    <footer id="flagf">
+        <img src="https://flagsapi.com/US/flat/64.png">
+        <img src="https://flagsapi.com/GB/flat/64.png">
+        <img src="https://flagsapi.com/BE/flat/64.png">
+        <img src="https://flagsapi.com/BR/flat/64.png">
+        <img src="https://flagsapi.com/PL/flat/64.png">
+        <img src="https://flagsapi.com/PK/flat/64.png">
+        <img src="https://flagsapi.com/RU/flat/64.png">
+        <img src="https://flagsapi.com/PH/flat/64.png">
+        <img src="https://flagsapi.com/JP/flat/64.png">
+        <img src="https://flagsapi.com/RW/flat/64.png">
+        <img src="https://flagsapi.com/SE/flat/64.png">
+        <img src="https://flagsapi.com/RS/flat/64.png">
+        <img src="https://flagsapi.com/RO/flat/64.png">
+        <img src="https://flagsapi.com/SG/flat/64.png">
+        <img src="https://flagsapi.com/KH/flat/64.png">
+        <img src="https://flagsapi.com/KR/flat/64.png">
+        <img src="https://flagsapi.com/MA/flat/64.png">
+        <img src="https://flagsapi.com/SG/flat/64.png">
+        <img src="https://flagsapi.com/KZ/flat/64.png">
+        <img src="https://flagsapi.com/LA/flat/64.png">
+    </footer>
+</html>

@@ -9,7 +9,7 @@
             <a href="index.html" class= "link"><h4 class="logo">GeoWizard</h4></a>
             <a href="dailygame.html" class="link">Games</a>
             <a href="flagpractice.html" class="link">Flag Practice</a>
-            <a href="flagquiz.html" class="link">Flag Quiz</a>
+            <a href="quizSelector.html" class="link">Quizzes</a>
         </header>        
     </head>
     <body id="quiz">
@@ -668,6 +668,8 @@
                     no.style.visibility = 'hidden';
                     quitButton.style.visibility = 'hidden';
                     sureMessage.style.visibility = 'hidden';
+                    message.style.visibility = 'hidden'
+                    messagelength.style.visibility = 'hidden';
                     await sleep(1800);
                     location.reload();
                 }
@@ -678,6 +680,7 @@
                     hintButton.style.visibility = 'visible';
                     quitButton.style.visibility = 'visible';
                     sureMessage.style.visibility = 'hidden';
+                    message.style.visibility = 'hidden'
                 }
             }
         
