@@ -1,4 +1,5 @@
 # GeoWizard
+Geography quizzes and daily challenges to strengthen your geography knowledge!
 
 ## What is GeoWizard??
 GeoWizard is a site detailing a collection of flag quizzes. 
