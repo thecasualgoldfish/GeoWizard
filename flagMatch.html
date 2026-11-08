@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <title>
+            Flag Memory Match 
+        </title>
+        <header class="logorow">
+            <a href="index.html" class= "link"><h4 class="logo">GeoWizard</h4></a>
+            <a href="dailygame.html" class="link">Games</a>
+            <a href="flagpractice.html" class="link">Flag Practice</a>
+            <a href="quizSelector.html" class="link">Quizzes</a>
+        </header>    
+    </head>
+    <body>
+        <div class='titles'>Flag Memory Match</div>
+        <div class = 'card-row'>
+            <button id='1' class="photo-card">
+                
+            </button> 
+            <button id='2' class="photo-card">
+                
+            </button>
+            <button id='3' class="photo-card">
+                
+            </button>
+            <button id='4' class="photo-card">
+                
+            </button>
+            <button id='5' class="photo-card">
+                
+            </button>
+            <button id='6' class="photo-card">
+                
+            </button>
+        </div>
+        <div class = 'card-row'>
+            <button id='7' class="photo-card">
+                
+            </button> 
+            <button id='8' class="photo-card">
+                
+            </button>
+            <button id ='9' class="photo-card">
+                
+            </button>
+            <button id='10' class="photo-card">
+                
+            </button>
+            <button id= '11' class="photo-card">
+                
+            </button>
+            <button id='12' class="photo-card">
+                
+            </button>
+        </div>
+        <div class = 'card-row'>
+            <button id='13' class="photo-card">
+                
+            </button> 
+            <button id='14' class="photo-card">
+                
+            </button>
+            <button id ='15' class="photo-card">
+                
+            </button>
+            <button id='16' class="photo-card">
+                
+            </button>
+            <button id= '17' class="photo-card">
+                
+            </button>
+            <button id='18' class="photo-card">
+                
+            </button>
+        </div>
+        <div id = 'congrat' class="center">Congratulations! You completed the flag match. Click the button below to try again!</div>
+        <div class="center">
+            <button id="try">Try Again</button>
+        </div>
+    </body>
+    <script>
+        const flag = (countryCode) => `flags/${countryCode}.svg`;
+        const unFlags = {
+            Afghanistan: flag("af"),
+            Albania: flag("al"),
+            Algeria: flag("dz"),
+            Andorra: flag("ad"),
+            Angola: flag("ao"),
+            Antigua_and_Barbuda: flag("ag"),
+            Argentina: flag("ar"),
+            Armenia: flag("am"),
+            Australia: flag("au"),
+            Austria: flag("at"),
+            Azerbaijan: flag("az"),
+            Bahamas: flag("bs"),
+            Bahrain: flag("bh"),
+            Bangladesh: flag("bd"),
+            Barbados: flag("bb"),
+            Belarus: flag("by"),
+            Belgium: flag("be"),
+            Belize: flag("bz"),
+            Benin: flag("bj"),
+            Bhutan: flag("bt"),
+            Bolivia: flag("bo"),
+            Bosnia_and_Herzegovina: flag("ba"),
+            Botswana: flag("bw"),
+            Brazil: flag("br"),
+            Brunei: flag("bn"),
+            Bulgaria: flag("bg"),
+            Burkina_Faso: flag("bf"),
+            Burundi: flag("bi"),
+            Cabo_Verde: flag("cv"),
+            Cambodia: flag("kh"),
+            Cameroon: flag("cm"),
+            Canada: flag("ca"),
+            Central_African_Republic: flag("cf"),
+            Chad: flag("td"),
+            Chile: flag("cl"),
+            China: flag("cn"),
+            Colombia: flag("co"),
+            Comoros: flag("km"),
+            Congo: flag("cg"),
+            Costa_Rica: flag("cr"),
+            Cote_d_Ivoire: flag("ci"),
+            Croatia: flag("hr"),
+            Cuba: flag("cu"),
+            Cyprus: flag("cy"),
+            Czechia: flag("cz"),
+            Democratic_Republic_of_Congo: flag("cd"),
+            Denmark: flag("dk"),
+            Djibouti: flag("dj"),
+            Dominica: flag("dm"),
+            Dominican_Republic: flag("do"),
+            Ecuador: flag("ec"),
+            Egypt: flag("eg"),
+            El_Salvador: flag("sv"),
+            Equatorial_Guinea: flag("gq"),
+            Eritrea: flag("er"),
+            Estonia: flag("ee"),
+            Eswatini: flag("sz"),
+            Ethiopia: flag("et"),
+            Fiji: flag("fj"),
+            Finland: flag("fi"),
+            France: flag("fr"),
+            Gabon: flag("ga"),
+            Gambia: flag("gm"),
+            Georgia: flag("ge"),
+            Germany: flag("de"),
+            Ghana: flag("gh"),
+            Greece: flag("gr"),
+            Grenada: flag("gd"),
+            Guatemala: flag("gt"),
+            Guinea: flag("gn"),
+            Guinea_Bissau: flag("gw"),
+            Guyana: flag("gy"),
+            Haiti: flag("ht"),
+            Honduras: flag("hn"),
+            Hungary: flag("hu"),
+            Iceland: flag("is"),
+            India: flag("in"),
+            Indonesia: flag("id"),
+            Iran: flag("ir"),
+            Iraq: flag("iq"),
+            Ireland: flag("ie"),
+            Israel: flag("il"),
+            Italy: flag("it"),
+            Jamaica: flag("jm"),
+            Japan: flag("jp"),
+            Jordan: flag("jo"),
+            Kazakhstan: flag("kz"),
+            Kenya: flag("ke"),
+            Kiribati: flag("ki"),
+            Kuwait: flag("kw"),
+            Kyrgyzstan: flag("kg"),
+            Laos: flag("la"),
+            Latvia: flag("lv"),
+            Lebanon: flag("lb"),
+            Lesotho: flag("ls"),
+            Liberia: flag("lr"),
+            Libya: flag("ly"),
+            Liechtenstein: flag("li"),
+            Lithuania: flag("lt"),
+            Luxembourg: flag("lu"),
+            Madagascar: flag("mg"),
+            Malawi: flag("mw"),
+            Malaysia: flag("my"),
+            Maldives: flag("mv"),
+            Mali: flag("ml"),
+            Malta: flag("mt"),
+            Marshall_Islands: flag("mh"),
+            Mauritania: flag("mr"),
+            Mauritius: flag("mu"),
+            Mexico: flag("mx"),
+            Micronesia: flag("fm"),
+            Monaco: flag("mc"),
+            Mongolia: flag("mn"),
+            Montenegro: flag("me"),
+            Morocco: flag("ma"),
+            Mozambique: flag("mz"),
+            Myanmar: flag("mm"),
+            Namibia: flag("na"),
+            Nauru: flag("nr"),
+            Nepal: flag("np"),
+            Netherlands: flag("nl"),
+            New_Zealand: flag("nz"),
+            Nicaragua: flag("ni"),
+            Niger: flag("ne"),
+            Nigeria: flag("ng"),
+            North_Korea: flag("kp"),
+            North_Macedonia: flag("mk"),
+            Norway: flag("no"),
+            Oman: flag("om"),
+            Pakistan: flag("pk"),
+            Palau: flag("pw"),
+            Palestine: flag("ps"),
+            Panama: flag("pa"),
+            Papua_New_Guinea: flag("pg"),
+            Paraguay: flag("py"),
+            Peru: flag("pe"),
+            Philippines: flag("ph"),
+            Poland: flag("pl"),
+            Portugal: flag("pt"),
+            Qatar: flag("qa"),
+            Romania: flag("ro"),
+            Russia: flag("ru"),
+            Rwanda: flag("rw"),
+            Saint_Kitts_and_Nevis: flag("kn"),
+            Saint_Lucia: flag("lc"),
+            Saint_Vincent_and_the_Grenadines: flag("vc"),
+            Samoa: flag("ws"),
+            San_Marino: flag("sm"),
+            Sao_Tome_and_Principe: flag("st"),
+            Saudi_Arabia: flag("sa"),
+            Senegal: flag("sn"),
+            Serbia: flag("rs"),
+            Seychelles: flag("sc"),
+            Sierra_Leone: flag("sl"),
+            Singapore: flag("sg"),
+            Slovakia: flag("sk"),
+            Slovenia: flag("si"),
+            Solomon_Islands: flag("sb"),
+            Somalia: flag("so"),
+            South_Africa: flag("za"),
+            South_Korea: flag("kr"),
+            South_Sudan: flag("ss"),
+            Spain: flag("es"),
+            Sri_Lanka: flag("lk"),
+            Sudan: flag("sd"),
+            Suriname: flag("sr"),
+            Sweden: flag("se"),
+            Switzerland: flag("ch"),
+            Syria: flag("sy"),
+            Tajikistan: flag("tj"),
+            Tanzania: flag("tz"),
+            Thailand: flag("th"),
+            Timor_Leste: flag("tl"),
+            Togo: flag("tg"),
+            Tonga: flag("to"),
+            Trinidad_and_Tobago: flag("tt"),
+            Tunisia: flag("tn"),
+            Turkey: flag("tr"),
+            Turkmenistan: flag("tm"),
+            Tuvalu: flag("tv"),
+            Uganda: flag("ug"),
+            Ukraine: flag("ua"),
+            United_Arab_Emirates: flag("ae"),
+            United_Kingdom: flag("gb"),
+            United_States: flag("us"),
+            Uruguay: flag("uy"),
+            Uzbekistan: flag("uz"),
+            Vanuatu: flag("vu"),
+            Venezuela: flag("ve"),
+            Vietnam: flag("vn"),
+            Yemen: flag("ye"),
+            Zambia: flag("zm"),
+            Zimbabwe: flag("zw"),
+        };
+        let matched = 0;
+        function shuffleArray(array) {
+            const newArray = array;
+            for (let i = newArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+            }
+            return newArray;
+        }
+        function connectImages() {
+            const cards = Array.from(document.querySelectorAll(".photo-card"));
+            const selectedPairs = shuffleArray(Object.entries(unFlags))
+            .slice(0, 9)
+            .flatMap(([country, src]) => [
+                { country, kind: "flag", value: src },
+                { country, kind: "name", value: country.replaceAll("_", " ") }
+            ]);
+
+            const shuffledPairs = shuffleArray(selectedPairs);
+
+            cards.forEach((card, i) => {
+                const pair = shuffledPairs[i];
+                if (!pair) {
+                    return;
+                }
+
+                card.dataset.country = pair.country;
+                card.dataset.kind = pair.kind;
+
+                card.innerHTML = "";
+
+                if (pair.kind === "flag") {
+                    const picture = document.createElement("img");
+                    picture.className = "card-picture";
+                    picture.src = pair.value;
+                    picture.alt = pair.country;
+                    picture.style.visibility = "hidden";
+                    card.appendChild(picture);
+                } else {
+                    const text = document.createElement("h1");
+                    text.className = "card-text";
+                    text.textContent = pair.value;
+                    text.style.visibility = "hidden";
+                    card.appendChild(text);
+                }
+            });
+
+            document.querySelectorAll(".photo-card").forEach(card => {
+                card.addEventListener("click", () => onCardClick(card));
+            });
+        }
+
+        let firstCard = null;
+        let locked = false;
+        let tryAgain = document.querySelector("#try");
+        let congrat = document.querySelector("#congrat");
+        tryAgain.style.visibility = 'hidden';
+        congrat.style.visibility = 'hidden';
+
+
+        function onCardClick(card) {
+            if (locked || card.disabled || card === firstCard) {
+                return;
+            }
+
+            const children = card.querySelectorAll(".card-picture, .card-text");
+            children.forEach(element => {
+                element.style.visibility = "visible";
+            });
+
+            if (!firstCard) {
+                firstCard = card;
+                return;
+            }
+
+            const previousCard = firstCard;
+            firstCard = null;
+
+            const match = card.dataset.country === previousCard.dataset.country && card.dataset.kind !== previousCard.dataset.kind;
+
+            if (match) {
+                card.disabled = true;
+                previousCard.disabled = true;
+                matched+=1;
+                if (matched == 9){
+                    tryAgain.style.visibility = 'visible';
+                    congrat.style.visibility = 'visible';
+                    tryAgain.onclick = function(event){
+                        location.reload();
+                    }
+                }
+                return;
+            }
+
+            locked = true;
+
+            setTimeout(() => {
+                card.querySelectorAll(".card-picture, .card-text").forEach(element => {
+                    element.style.visibility = "hidden";
+                });
+
+                previousCard.querySelectorAll(".card-picture, .card-text").forEach(element => {
+                    element.style.visibility = "hidden";
+                });
+
+                locked = false;
+            }, 700);
+        }
+        connectImages();
+
+    </script>
+    <footer id="footflagmatch">
+        <img src="https://flagsapi.com/US/flat/64.png">
+        <img src="https://flagsapi.com/GB/flat/64.png">
+        <img src="https://flagsapi.com/BE/flat/64.png">
+        <img src="https://flagsapi.com/BR/flat/64.png">
+        <img src="https://flagsapi.com/PL/flat/64.png">
+        <img src="https://flagsapi.com/PK/flat/64.png">
+        <img src="https://flagsapi.com/RU/flat/64.png">
+        <img src="https://flagsapi.com/PH/flat/64.png">
+        <img src="https://flagsapi.com/JP/flat/64.png">
+        <img src="https://flagsapi.com/RW/flat/64.png">
+        <img src="https://flagsapi.com/SE/flat/64.png">
+        <img src="https://flagsapi.com/RS/flat/64.png">
+        <img src="https://flagsapi.com/RO/flat/64.png">
+        <img src="https://flagsapi.com/SG/flat/64.png">
+        <img src="https://flagsapi.com/KH/flat/64.png">
+        <img src="https://flagsapi.com/KR/flat/64.png">
+        <img src="https://flagsapi.com/MA/flat/64.png">
+        <img src="https://flagsapi.com/SA/flat/64.png">
+        <img src="https://flagsapi.com/KZ/flat/64.png">
+        <img src="https://flagsapi.com/LA/flat/64.png">
+        <img src="https://flagsapi.com/ZA/flat/64.png">
+    </footer>
+</html>

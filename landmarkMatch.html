@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <title>
+            Landmark Memory Match 
+        </title>
+        <header class="logorow">
+            <a href="index.html" class= "link"><h4 class="logo">GeoWizard</h4></a>
+            <a href="dailygame.html" class="link">Games</a>
+            <a href="flagpractice.html" class="link">Flag Practice</a>
+            <a href="quizSelector.html" class="link">Quizzes</a>
+        </header>    
+    </head>
+    <body>
+
+        <div class='titles'>Landmark Memory Match</div>
+        <div class = 'card-row'>
+            <button id='1' class="photo-card">
+                
+            </button> 
+            <button id='2' class="photo-card">
+                
+            </button>
+            <button id='3' class="photo-card">
+                
+            </button>
+            <button id='4' class="photo-card">
+                
+            </button>
+            <button id='5' class="photo-card">
+                
+            </button>
+            <button id='6' class="photo-card">
+                
+            </button>
+        </div>
+        <div class = 'card-row'>
+            <button id='7' class="photo-card">
+                
+            </button> 
+            <button id='8' class="photo-card">
+                
+            </button>
+            <button id ='9' class="photo-card">
+                
+            </button>
+            <button id='10' class="photo-card">
+                
+            </button>
+            <button id= '11' class="photo-card">
+                
+            </button>
+            <button id='12' class="photo-card">
+                
+            </button>
+        </div>
+        <div class = 'card-row'>
+            <button id='13' class="photo-card">
+                
+            </button> 
+            <button id='14' class="photo-card">
+                
+            </button>
+            <button id ='15' class="photo-card">
+                
+            </button>
+            <button id='16' class="photo-card">
+                
+            </button>
+            <button id= '17' class="photo-card">
+                
+            </button>
+            <button id='18' class="photo-card">
+                
+            </button>
+        </div>
+        <div id = 'congrat' class="center">Congratulations! You completed the memory match. Click the button below to try again!</div>
+        <div class="center">
+            <button id="try">Try Again</button>
+        </div>
+    </body>
+    <script>
+        
+        const landmarks = {
+            Taj_Mahal: 'tajmahal.png',
+            Eiffel_Tower: 'eiffeltower.png',
+            Statue_of_Liberty: 'statue.png',
+            Pyramids_of_Giza: 'pyramids.png',
+            Great_Wall_of_China: 'wall.png',
+            Roman_Colosseum: 'roman.png',
+            Christ_the_Redeemer: 'christ.png',
+            Grand_Canyon: 'grandcanyon.png',
+            Mount_Everest: 'mounteverest.png',
+            Machu_Picchu: 'machuupichu.png',
+            Golden_Gate_Bridge: 'golden.png',
+            Stonehenge: 'stonehenge.png',
+            Leaning_Tower_of_Pisa: 'leaningtower.png',
+            Mount_Fuji: 'mountfuji.png',
+            Sydney_Opera_House: 'sydneyopera.png'
+
+        }
+        let matched = 0;
+        function shuffleArray(array) {
+            const newArray = array;
+            for (let i = newArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+            }
+            return newArray;
+        }
+        function connectImages() {
+            const cards = Array.from(document.querySelectorAll(".photo-card"));
+            const selectedPairs = shuffleArray(Object.entries(landmarks))
+            .slice(0, 9)
+            .flatMap(([country, src]) => [
+            { country, kind: "flag", value: src },
+            { country, kind: "name", value: country.replaceAll("_", " ") }
+            ]);
+
+            const shuffledPairs = shuffleArray(selectedPairs);
+
+            cards.forEach((card, i) => {
+                const pair = shuffledPairs[i];
+                if (!pair) {
+                    return;
+                }
+
+                card.dataset.country = pair.country;
+                card.dataset.kind = pair.kind;
+
+                card.innerHTML = '';
+
+                if (pair.kind === "flag") {
+                    const picture = document.createElement("img");
+                    picture.className = "card-picture";
+                    picture.src = pair.value;
+                    picture.alt = pair.country;
+                    picture.style.visibility = "hidden";
+                    card.appendChild(picture);
+                } else {
+                    const text = document.createElement("h1");
+                    text.className = "card-text"; 
+                    text.textContent = pair.value;
+                    text.style.visibility = "hidden";
+                    card.appendChild(text);
+                }
+            });
+
+            document.querySelectorAll(".photo-card").forEach(card => {
+                card.addEventListener("click", () => onCardClick(card));
+            });
+        }
+
+        let firstCard = null;
+        let locked = false;
+        let tryAgain = document.querySelector("#try");
+        let congrat = document.querySelector("#congrat");
+        tryAgain.style.visibility = 'hidden';
+        congrat.style.visibility = 'hidden';
+
+        function onCardClick(card) {
+            if (locked || card.disabled || card === firstCard) {
+                return;
+            }
+
+            const children = card.querySelectorAll(".card-picture, .card-text");
+            children.forEach(element => {
+                element.style.visibility = "visible";
+            });
+
+            if (!firstCard) {
+                firstCard = card;
+                return;
+            }
+
+            const previousCard = firstCard;
+            firstCard = null;
+
+            const match = card.dataset.country === previousCard.dataset.country && card.dataset.kind !== previousCard.dataset.kind;
+
+            if (match) {
+                card.disabled = true;
+                previousCard.disabled = true;
+                matched+=1;
+                if (matched == 9){
+                    tryAgain.style.visibility = 'visible';
+                    congrat.style.visibility = 'visible';
+                    tryAgain.onclick = function(event){
+                        location.reload();
+                    }
+                }
+                return;
+            }
+
+            locked = true;
+
+            setTimeout(() => {
+                card.querySelectorAll(".card-picture, .card-text").forEach(element => {
+                    element.style.visibility = "hidden";
+                });
+
+                previousCard.querySelectorAll(".card-picture, .card-text").forEach(element => {
+                    element.style.visibility = "hidden";
+                });
+
+                locked = false;
+            }, 700);
+        }
+        connectImages();
+
+    </script>
+    <footer id="footlandmarkmatch">
+        <img src="https://flagsapi.com/US/flat/64.png">
+        <img src="https://flagsapi.com/GB/flat/64.png">
+        <img src="https://flagsapi.com/BE/flat/64.png">
+        <img src="https://flagsapi.com/BR/flat/64.png">
+        <img src="https://flagsapi.com/PL/flat/64.png">
+        <img src="https://flagsapi.com/PK/flat/64.png">
+        <img src="https://flagsapi.com/RU/flat/64.png">
+        <img src="https://flagsapi.com/PH/flat/64.png">
+        <img src="https://flagsapi.com/JP/flat/64.png">
+        <img src="https://flagsapi.com/RW/flat/64.png">
+        <img src="https://flagsapi.com/SE/flat/64.png">
+        <img src="https://flagsapi.com/RS/flat/64.png">
+        <img src="https://flagsapi.com/RO/flat/64.png">
+        <img src="https://flagsapi.com/SG/flat/64.png">
+        <img src="https://flagsapi.com/KH/flat/64.png">
+        <img src="https://flagsapi.com/KR/flat/64.png">
+        <img src="https://flagsapi.com/MA/flat/64.png">
+        <img src="https://flagsapi.com/SA/flat/64.png">
+        <img src="https://flagsapi.com/KZ/flat/64.png">
+        <img src="https://flagsapi.com/LA/flat/64.png">
+        <img src="https://flagsapi.com/ZA/flat/64.png">
+    </footer>
+</html>
