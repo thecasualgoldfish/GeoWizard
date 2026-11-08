@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <title>
+            Capital Memory Match 
+        </title>
+        <header class="logorow">
+            <a href="index.html" class= "link"><h4 class="logo">GeoWizard</h4></a>
+            <a href="dailygame.html" class="link">Games</a>
+            <a href="flagpractice.html" class="link">Flag Practice</a>
+            <a href="quizSelector.html" class="link">Quizzes</a>
+        </header>    
+    </head>
+    <body>
+
+        <div class='titles'>Word Capital Memory Match</div>
+        <div class = 'card-row'>
+            <button id='1' class="photo-card">
+                
+            </button> 
+            <button id='2' class="photo-card">
+                
+            </button>
+            <button id='3' class="photo-card">
+                
+            </button>
+            <button id='4' class="photo-card">
+                
+            </button>
+            <button id='5' class="photo-card">
+                
+            </button>
+            <button id='6' class="photo-card">
+                
+            </button>
+        </div>
+        <div class = 'card-row'>
+            <button id='7' class="photo-card">
+                
+            </button> 
+            <button id='8' class="photo-card">
+                
+            </button>
+            <button id ='9' class="photo-card">
+                
+            </button>
+            <button id='10' class="photo-card">
+                
+            </button>
+            <button id= '11' class="photo-card">
+                
+            </button>
+            <button id='12' class="photo-card">
+                
+            </button>
+        </div>
+        <div class = 'card-row'>
+            <button id='13' class="photo-card">
+                
+            </button> 
+            <button id='14' class="photo-card">
+                
+            </button>
+            <button id ='15' class="photo-card">
+                
+            </button>
+            <button id='16' class="photo-card">
+                
+            </button>
+            <button id= '17' class="photo-card">
+                
+            </button>
+            <button id='18' class="photo-card">
+                
+            </button>
+        </div>
+        <div id = 'congrat' class="center">Congratulations! You completed the world capital match. Click the button below to try again!</div>
+        <div class="center">
+            <button id="try">Try Again</button>
+        </div>
+    </body>
+    <script>
+        const allCapitals = {
+            Albania: "Tirana",
+            Algeria: "Algiers",
+            Angola: "Luanda",
+            Armenia: "Yerevan",
+            Azerbaijan: "Baku",
+            Bahamas: "Nassau",
+            Belarus: "Minsk",
+            Bolivia: "Sucre",
+            Bosnia_and_Herzegovina: "Sarajevo",
+            Botswana: "Gaborone",
+            Bulgaria: "Sofia",
+            Cambodia: "Phnom Penh",
+            Cameroon: "Yaounde",
+            Costa_Rica: "San Jose",
+            Croatia: "Zagreb",
+            Czechia: "Prague",
+            Dominican_Republic: "Santo Domingo",
+            Ecuador: "Quito",
+            El_Salvador: "San Salvador",
+            Estonia: "Tallinn",
+            Ethiopia: "Addis Ababa",
+            Ghana: "Accra",
+            Guatemala: "Guatemala City",
+            Haiti: "Port-au-Prince",
+            Honduras: "Tegucigalpa",
+            Hungary: "Budapest",
+            Iceland: "Reykjavik",
+            Jordan: "Amman",
+            Kazakhstan: "Astana",
+            Kuwait: "Kuwait City",
+            Lebanon: "Beirut",
+            Libya: "Tripoli",
+            Lithuania: "Vilnius",
+            Madagascar: "Antananarivo",
+            Malawi: "Lilongwe",
+            Mali: "Bamako",
+            Malta: "Valletta",
+            Mongolia: "Ulaanbaatar",
+            Montenegro: "Podgorica",
+            Mozambique: "Maputo",
+            Myanmar: "Naypyidaw",
+            Namibia: "Windhoek",
+            Nepal: "Kathmandu",
+            Nicaragua: "Managua",
+            Oman: "Muscat",
+            Panama: "Panama City",
+            Paraguay: "Asuncion",
+            Qatar: "Doha",
+            Romania: "Bucharest",
+            Serbia: "Belgrade",
+            Slovakia: "Bratislava",
+            Slovenia: "Ljubljana",
+            Somalia: "Mogadishu",
+            Sri_Lanka: "Sri Jayawardenepura Kotte",
+            Sudan: "Khartoum",
+            Syria: "Damascus",
+            Tanzania: "Dodoma",
+            Tunisia: "Tunis",
+            Uganda: "Kampala",
+            Uruguay: "Montevideo",
+            Uzbekistan: "Tashkent",
+            Venezuela: "Caracas",
+            Yemen: "Sanaa",
+            Zambia: "Lusaka",
+            Zimbabwe: "Harare",
+            Afghanistan: "Kabul",
+            Andorra: "Andorra la Vella",
+            Antigua_and_Barbuda: "Saint John's",
+            Bahrain: "Manama",
+            Bangladesh: "Dhaka",
+            Barbados: "Bridgetown",
+            Belize: "Belmopan",
+            Benin: "Porto-Novo",
+            Bhutan: "Thimphu",
+            Brunei: "Bandar Seri Begawan",
+            Burkina_Faso: "Ouagadougou",
+            Burundi: "Gitega",
+            Cabo_Verde: "Praia",
+            Central_African_Republic: "Bangui",
+            Chad: "N'Djamena",
+            Comoros: "Moroni",
+            Republic_of_the_Congo: "Brazzaville",
+            Cote_d_Ivoire: "Yamoussoukro",
+            Cyprus: "Nicosia",
+            Democratic_Republic_of_the_Congo: "Kinshasa",
+            Djibouti: "Djibouti",
+            Dominica: "Roseau",
+            Equatorial_Guinea: "Malabo",
+            Eritrea: "Asmara",
+            Eswatini: "Mbabane",
+            Fiji: "Suva",
+            Gabon: "Libreville",
+            Gambia: "Banjul",
+            Georgia: "Tbilisi",
+            Grenada: "Saint George's",
+            Guinea: "Conakry",
+            Guinea_Bissau: "Bissau",
+            Guyana: "Georgetown",
+            Jamaica: "Kingston",
+            Kiribati: "South Tarawa",
+            Kyrgyzstan: "Bishkek",
+            Laos: "Vientiane",
+            Latvia: "Riga",
+            Lesotho: "Maseru",
+            Liberia: "Monrovia",
+            Liechtenstein: "Vaduz",
+            Luxembourg: "Luxembourg",
+            Maldives: "Male",
+            Marshall_Islands: "Majuro",
+            Mauritania: "Nouakchott",
+            Mauritius: "Port Louis",
+            Micronesia: "Palikir",
+            Moldova: "Chisinau",
+            Monaco: "Monaco",
+            Nauru: "Yaren",
+            Niger: "Niamey",
+            North_Korea: "Pyongyang",
+            North_Macedonia: "Skopje",
+            Palau: "Ngerulmud",
+            Papua_New_Guinea: "Port Moresby",
+            Rwanda: "Kigali",
+            Saint_Kitts_and_Nevis: "Basseterre",
+            Saint_Lucia: "Castries",
+            Saint_Vincent_and_the_Grenadines: "Kingstown",
+            Samoa: "Apia",
+            San_Marino: "San Marino",
+            Sao_Tome_and_Principe: "Sao Tome",
+            Senegal: "Dakar",
+            Seychelles: "Victoria",
+            Sierra_Leone: "Freetown",
+            Solomon_Islands: "Honiara",
+            South_Sudan: "Juba",
+            Suriname: "Paramaribo",
+            Tajikistan: "Dushanbe",
+            Timor_Leste: "Dili",
+            Togo: "Lome",
+            Tonga: "Nuku'alofa",
+            Trinidad_and_Tobago: "Port of Spain",
+            Turkmenistan: "Ashgabat",
+            Tuvalu: "Funafuti",
+            Vanuatu: "Port Vila",
+            Argentina: "Buenos Aires",
+            Australia: "Canberra",
+            Austria: "Vienna",
+            Belgium: "Brussels",
+            Brazil: "Brasilia",
+            Canada: "Ottawa",
+            Chile: "Santiago",
+            China: "Beijing",
+            Colombia: "Bogota",
+            Cuba: "Havana",
+            Denmark: "Copenhagen",
+            Egypt: "Cairo",
+            Finland: "Helsinki",
+            France: "Paris",
+            Germany: "Berlin",
+            Greece: "Athens",
+            India: "New Delhi",
+            Indonesia: "Jakarta",
+            Iran: "Tehran",
+            Iraq: "Baghdad",
+            Ireland: "Dublin",
+            Israel: "Jerusalem",
+            Italy: "Rome",
+            Japan: "Tokyo",
+            Kenya: "Nairobi",
+            Malaysia: "Kuala Lumpur",
+            Mexico: "Mexico City",
+            Morocco: "Rabat",
+            Netherlands: "Amsterdam",
+            New_Zealand: "Wellington",
+            Nigeria: "Abuja",
+            Norway: "Oslo",
+            Pakistan: "Islamabad",
+            Peru: "Lima",
+            Philippines: "Manila",
+            Poland: "Warsaw",
+            Portugal: "Lisbon",
+            Russia: "Moscow",
+            Saudi_Arabia: "Riyadh",
+            Singapore: "Singapore",
+            South_Africa: "Pretoria",
+            South_Korea: "Seoul",
+            Spain: "Madrid",
+            Sweden: "Stockholm",
+            Switzerland: "Bern",
+            Thailand: "Bangkok",
+            Turkey: "Ankara",
+            Ukraine: "Kyiv",
+            United_Arab_Emirates: "Abu Dhabi",
+            United_Kingdom: "London",
+            United_States: "Washington, D.C.",
+            Vietnam: "Hanoi"
+        };
+
+        let matched = 0;
+        function shuffleArray(array) {
+            const newArray = array;
+            for (let i = newArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+            }
+            return newArray;
+        }
+        function connectImages() {
+            const cards = Array.from(document.querySelectorAll(".photo-card"));
+            const selectedPairs = shuffleArray(Object.entries(allCapitals))
+            .slice(0, 9)
+            .flatMap(([country, capital]) => [
+            { country, kind: "capital", value: capital },
+            { country, kind: "name", value: country.replaceAll("_", " ") }
+            ]);
+
+            const shuffledPairs = shuffleArray(selectedPairs);
+
+            cards.forEach((card, i) => {
+                const pair = shuffledPairs[i];
+                if (!pair) {
+                    return;
+                }
+
+                card.dataset.country = pair.country;
+                card.dataset.kind = pair.kind;
+
+                card.innerHTML = '';
+
+                if (pair.kind === "capital") {
+                    const text = document.createElement("h1");
+                    text.className = "card-text"; 
+                    text.textContent = pair.value;
+                    text.style.visibility = "hidden";
+                    card.appendChild(text);
+                    
+                } else {
+                    const text = document.createElement("h1");
+                    text.className = "card-text"; 
+                    text.textContent = pair.value;
+                    text.style.visibility = "hidden";
+                    card.appendChild(text);
+                }
+            });
+
+            document.querySelectorAll(".photo-card").forEach(card => {
+                card.addEventListener("click", () => onCardClick(card));
+            });
+        }
+
+        let firstCard = null;
+        let locked = false;
+        let tryAgain = document.querySelector("#try");
+        let congrat = document.querySelector("#congrat");
+        tryAgain.style.visibility = 'hidden';
+        congrat.style.visibility = 'hidden';
+
+        function onCardClick(card) {
+            if (locked || card.disabled || card === firstCard) {
+                return;
+            }
+
+            const children = card.querySelectorAll(".card-picture, .card-text");
+            children.forEach(element => {
+                element.style.visibility = "visible";
+            });
+
+            if (!firstCard) {
+                firstCard = card;
+                return;
+            }
+
+            const previousCard = firstCard;
+            firstCard = null;
+
+            const match = card.dataset.country === previousCard.dataset.country && card.dataset.kind !== previousCard.dataset.kind;
+
+            if (match) {
+                card.disabled = true;
+                previousCard.disabled = true;
+                matched+=1;
+                if (matched == 9){
+                    tryAgain.style.visibility = 'visible';
+                    congrat.style.visibility = 'visible';
+                    tryAgain.onclick = function(event){
+                        location.reload();
+                    }
+                }
+                return;
+            }
+
+            locked = true;
+
+            setTimeout(() => {
+                card.querySelectorAll(".card-picture, .card-text").forEach(element => {
+                    element.style.visibility = "hidden";
+                });
+
+                previousCard.querySelectorAll(".card-picture, .card-text").forEach(element => {
+                    element.style.visibility = "hidden";
+                });
+
+                locked = false;
+            }, 700);
+        }
+        connectImages();
+
+    </script>
+    <footer id="footcapmatch">
+        <img src="https://flagsapi.com/US/flat/64.png">
+        <img src="https://flagsapi.com/GB/flat/64.png">
+        <img src="https://flagsapi.com/BE/flat/64.png">
+        <img src="https://flagsapi.com/BR/flat/64.png">
+        <img src="https://flagsapi.com/PL/flat/64.png">
+        <img src="https://flagsapi.com/PK/flat/64.png">
+        <img src="https://flagsapi.com/RU/flat/64.png">
+        <img src="https://flagsapi.com/PH/flat/64.png">
+        <img src="https://flagsapi.com/JP/flat/64.png">
+        <img src="https://flagsapi.com/RW/flat/64.png">
+        <img src="https://flagsapi.com/SE/flat/64.png">
+        <img src="https://flagsapi.com/RS/flat/64.png">
+        <img src="https://flagsapi.com/RO/flat/64.png">
+        <img src="https://flagsapi.com/SG/flat/64.png">
+        <img src="https://flagsapi.com/KH/flat/64.png">
+        <img src="https://flagsapi.com/KR/flat/64.png">
+        <img src="https://flagsapi.com/MA/flat/64.png">
+        <img src="https://flagsapi.com/SA/flat/64.png">
+        <img src="https://flagsapi.com/KZ/flat/64.png">
+        <img src="https://flagsapi.com/LA/flat/64.png">
+        <img src="https://flagsapi.com/ZA/flat/64.png">
+    </footer>
+</html>

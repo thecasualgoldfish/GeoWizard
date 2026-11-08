@@ -1,110 +1,59 @@
-header
-{
+header {
     background-color: black; 
     color: white;
     margin-bottom: 10px;
-    margin: 0;
-    font-size:xx-large 
+    margin: 0px;
+    font-size: xx-large;
 }
-.logo
-{
-    margin-right: 890px;
+.logo {
+    margin-right: 945px;
     margin-left: 0px;
     margin-top: 0;
     margin-bottom: 0;
     background-color: black;
 }
-#statement1
-{
-    margin-bottom: 20px;
-    margin-top: 20px;
+#statement1 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.link {
+    text-decoration: none;
+    color: whitesmoke;
+    margin-right: 10px;
+}
+#flagofUS {
+    width: 446px;
+    height: 270px;
+    margin-left: 20px;
+    margin-right: 50px;
+    margin-top: 50px;
+}
+#flagofUK {
+    width: 446px;
+    height: 270px;
     margin-left: 10px;
+    margin-right: 50px;
 }
-body
-{
-    font-size: x-large;
+#flagofFrance {
+    width: 446px;
+    height: 270px;
+    margin-left: 10px;
+    margin-right: 20px;
 }
-.link
-{
-    text-decoration: none;
-    color: white;
-    margin-right: 14px
-}
-#flagofUS
-{
-    border-image-width: 520px;
-    height: 260px;
-    margin-left: 50px;
-    margin-right: 50px
-}
-#flagofUK
-{
-    border-image-width: 520px;
-    height: 260px;
-    margin-left: 40px;
-    margin-right: 40px
-}
-#flagofFrance
-{
-    border-image-width: 520px;
-    height: 260px;
-    margin-left: 40px;
-    margin-right: 10px
-    
-}
-body
-{
+body{
     background-color: whitesmoke;
-    margin: 0;
+    font-size: x-large;
+    margin: 0px;
 }
-#flagquizhead
-{
-    margin-left: 10px
+#dailygamehead, #flagpracticehead, #flagquizhead {
+    margin-left: 12px
 }
-#flagpracticehead
-{
-    margin-left: 10px
-}
-#dailygamehead
-{
-    margin-left: 10px
-}
-#easyquizselect
-{
-    text-align: center;
-    text-decoration: none;
-    font-size: xx-large;
-    margin-left: 30px;
-    margin-right: 30px;
-    color: white;
-
-}
-#medquizselect
-{
-    text-align: center;
-    text-decoration: none;
-    font-size: xx-large;
-    margin-left: 30px;
-    margin-right: 30px;
-    color: white;
-}
-#hardquizselect
-{
-    text-align: center;
-    text-decoration: none;
-    font-size: xx-large;
-    margin-left: 30px;
-    margin-right: 30px;
-    color: white;
-}
-#statementquiz
-{
+#statementquiz {
     text-align: center;
     font-size: xx-large;
-    margin-top: 20px;
 }
-.card-row
-{
+.card-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -113,10 +62,9 @@ body
     flex-wrap: nowrap;
     overflow-x: auto;
 }
-.text-card
-{
+.text-card {
     flex: 0 0 300px;
-    width: 300px;
+    box-sizing: border-box;
     height: 220px;;
     border: 1px solid #e0e0e0;
     border-radius: 12px;
@@ -127,106 +75,91 @@ body
     text-decoration: none;
     background-color: red;
 }
-.card-title
-{
+.card-title {
     color: white;
     margin-bottom: none;
+    margin-top: 15px;
 }
-.card-text
-{
+.card-text {
     color: white;
     margin: 20px;
     font-size: medium;
 }
-.logorow
-{
+.logorow {
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: nowrap;
-    overflow-x: auto;
 }
-#guessbox
-{
+#guessbox {
     display: flex;
     justify-content: center;
     border-color: black;
 }
-.titles
-{
+.titles {
+    text-align: center;
+    font-size: xx-large;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+#title {
     text-align: center;
     font-size: xx-large;
     display: flex;
     justify-content: center;
 }
-#title
-{
-    text-align: center;
-    font-size: xx-large;
-    display: flex;
-    justify-content: center;
-}
-.flagfooter
-{
+.flagfooter {
     margin-left: 30px;
     margin-top: 110px;
 }
-#correct
-{
+#correct {
     text-align: center;
     font-size: xx-large;
     display: flex;
     justify-content: center;
 }
-#sorry
-{
+#sorry {
     text-align:center;
     font-size: xx-large;   
     display: flex;
     justify-content: center;
 }
-#flags
-{
+#flags {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
     margin-top: 20px;
 }
-#easycard
-{
+#easycard {
     background-color: green;
     height: 200px;
 }
-#mediumcard
-{
+#mediumcard {
     background-color: orange;
     height: 200px;
 }
-#hardcard
-{
+#hardcard {
     background-color: red;
     height: 200px;
 }
-.stop
-{
+.stop {
 
     display: flex;
     justify-content: center;
 }
-#accuracy 
-{
+#accuracy {
     margin-top: 50px;
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
 }
-.center
-{
+.center {
     display: flex;
     justify-content: center;
 }
-.letter-box
-{
+.letter-box {
     flex: 0 0 50px;
     height: 50px;;
     border: 1px solid #e0e0e0;
@@ -235,8 +168,7 @@ body
     text-decoration: none;
     background-color: whitesmoke;
 }
-.letter-space
-{
+.letter-space {
     flex: 0 0 10px;
     height: 50px;;
     border: white;
@@ -245,8 +177,7 @@ body
     text-decoration: none;
     background-color: whitesmoke;
 }
-.letter-box
-{
+.letter-box {
     margin: none;
     text-align: center;
     width: 20px;
@@ -254,8 +185,7 @@ body
     flex-direction: row;
     border-color: black;
 }
-#letter-row
-{
+#letter-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -263,59 +193,48 @@ body
     flex-wrap: nowrap;
     overflow-x: auto;
 }
-.letter
-{
+.letter {
     margin-bottom: 10px;
-    margin-top: 0px;
-    
+    margin-top: 0px;   
 }
-#input-row
-{
+#input-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: nowrap;
     overflow-x: auto;
 }
-#newRow
-{
+#newRow {
     display: flex;
     justify-content: center;
 }
-.nextRow
-{
+.nextRow {
     display: flex;
     justify-content: center;
-
 }
-#input-row
-{
+#input-row {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-#message
-{
+#message {
     display: flex;
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-#hint
-{
+#hint {
     display: flex;
     justify-content: center;
 }
-#quitButton
-{
+#quitButton {
     margin-top: 20px;
 }
 #sureMessage {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-#text-box
-{
+#text-box {
     display: flex;
     justify-content: center;
     margin-top: 30px;
@@ -323,23 +242,289 @@ body
     width: 100%;
     height: 30px;
 }
-#flagf
-{
-    margin-top: 230px;
-    margin-left: 40px;
-}
-#top-text
-{
+
+#top-text {
     margin-top: 50px;
     margin-bottom: 50px;
 }
-#card-text
-{
+
+#card-text {
     color: white;
     font-size: medium;
     margin-top: 0px;
 }
-#quest
-{
+
+#quest {
     margin-right: 20px;
+}
+
+.photo-card {
+    flex: 0 0 100px;
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+    min-height: 100px;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.card-picture,
+.card-text {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.2;
+    align-items: center;
+    justify-content: center;
+}
+.card-text{
+    margin-top: 40px;
+    color: black;  
+    object-fit: cover;
+}
+
+.text {
+    color: white;
+    margin: 20px;
+    font-size: medium;
+}
+
+#text {
+    color: white;
+    font-size: medium;
+    margin-top: none;
+    margin: none;
+}
+
+#congrat {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#footquiz {
+    margin-top: 190px;
+    margin-left: 30px;
+}
+
+#footcapital {
+    margin-left: 30px;
+    margin-top: 195px;
+
+}
+
+#footasia {
+    margin-left: 30px;
+    margin-top: 78px;
+
+}
+#footafrica {
+    margin-left: 30px;
+    margin-top: 78px;
+}
+#footdailygame{
+    margin-left: 30px;
+}
+
+#footcongrats {
+    margin-left: 30px;
+     margin-top: 177px;
+
+}
+
+#footcountrycap {
+    margin-left: 30px;
+    margin-top: 195px;
+}
+
+#footcountrynam {
+    margin-left: 30px;
+
+}
+
+#footcountryout {
+    margin-left: 30px;
+    margin-top: 230px;
+
+}
+
+#footdailyflag {
+    margin-left: 30px;
+    margin-top: 78px;
+
+}
+
+#footeasycap {
+    margin-left: 30px;
+    margin-top: 315px;
+}
+
+#footeasyout {
+    margin-left: 30px;
+
+}
+
+#footeasyquiz {
+    margin-left: 30px;
+}
+
+#footeurope {
+    margin-left: 30px;
+    margin-top: 78px;
+
+}
+
+#footflagmatch {
+    margin-left: 30px;
+    margin-top: 30px;
+
+}
+
+#footflagpractice {
+    margin-left: 30px;
+
+}
+
+#footflagquiz {
+    margin-left: 30px;
+    margin-top: 230px;
+
+}
+
+#footflagrace {
+    margin-left: 30px;
+    margin-top: 230px;
+
+}
+
+#foothardcap {
+    margin-left: 30px;
+    margin-top: 315px;
+
+}
+
+#foothardout {
+    margin-left: 30px;
+    margin-top: 100px;
+
+}
+
+#foothardquiz {
+    margin-left: 30px;
+
+}
+
+#foothardquiz {
+    margin-left: 30px;
+
+}
+
+#footindex {
+    margin-left: 30px;
+    margin-top: 218px;
+
+}
+
+#footlandmarkmatch {
+    margin-left: 30px;
+    margin-top: 30px;
+
+}
+
+#footmediumcap {
+    margin-left: 30px;
+    margin-top: 315px;
+
+}
+
+#footmediumout {
+    margin-left: 30px;
+
+}
+
+#footmediumquiz {
+    margin-left: 30px;
+
+}
+
+#footmemoryselect {
+    margin-left: 30px;
+    margin-top: 267px;
+
+}
+
+#footmin {
+    margin-left: 30px;
+    margin-top: 82px;
+
+}
+
+#footname {
+    margin-left: 30px;
+    margin-top: 300px;
+
+}
+
+#footnorth {
+    margin-left: 30px;
+    margin-top: 78px;
+
+}
+
+#footoceania {
+    margin-left: 30px;
+    margin-top: 78px;
+}
+
+#footoutline {
+    margin-left: 30px;
+    margin-top: 190px;
+}
+
+#footoutlinematch {
+    margin-left: 30px;
+    margin-top: 30px;
+
+}
+
+#footsouth {
+    margin-left: 30px;
+    margin-top: 78px;
+
+}
+
+#footstatecap {
+    margin-left: 30px;
+    margin-top: 315px;
+
+}
+
+#footstateout {
+    margin-left: 30px;
+
+}
+
+#footten {
+    margin-left: 30px;
+    margin-top: 82px;
+
+}
+
+#footthirty {
+    margin-left: 30px;
+    margin-top: 82px;
+
+}
+#try{
+    margin-bottom: 20px;
+}
+#sureRow {
+    margin-bottom: 157px;
+}
+#footcapmatch {
+    margin-left: 30px;
+    margin-top: 30px;
 }
