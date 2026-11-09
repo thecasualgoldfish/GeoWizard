@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <title id="title">
+            Easy Capitals Quiz
+        </title>
+        <header class="logorow">
+            <a href="index.html" class= "link"><h4 class="logo">GeoWizard</h4></a>
+            <a href="dailygame.html" class="link">Games</a>
+            <a href="flagpractice.html" class="link">Flag Practice</a>
+            <a href="quizSelector.html" class="link">Quizzes</a>
+        </header>        
+    </head>
+    <body id="quiz">
+        <div class="titles">GeoQuestionare</div>
+        <div id="question" class ='center'></div>
+        <form id="text-box">
+            <input id = 'text' type="text">
+        </form>
+        <div id="currentScore" class="center"></div> 
+    </body>
+    <script>
+        approximateQuestions = {
+            How_many_countries_are_there_in_the_world: "195",
+            How_many_countries_are_in_Africa: "54",
+            How_many_countries_are_in_Europe: "44",
+            How_many_countries_border_China: "14",
+            How_many_countries_border_Russia: "14",
+            How_many_landlocked_countries_are_there: "44",
+            How_many_countries_use_the_euro: "21",
+            How_many_countries_have_Spanish_as_an_official_language: "20",
+            How_many_countries_have_a_population_over_100_million: "16",
+            How_many_countries_border_Germany: "9",
+            How_many_countries_border_Brazil: "10",
+            How_many_countries_are_in_the_EU: "27",
+            How_many_countries_are_in_South_America: "12",
+            How_many_countries_are_in_the_African_Union: "12",
+            About_how_many_people_live_in_Seoul: "9,300,000",
+            About_how_many_people_live_in_Mexico_City: "9,200,000",
+            About_how_many_people_live_in_Los_Angeles: "3,800,000",
+            About_how_many_people_live_in_Cairo: "10,000,000",
+            About_how_many_people_live_in_Paris: "2,100,000",
+            About_how_many_people_live_in_Mumbai: "13,000,000",
+            About_how_many_people_live_in_Toronto: "3,000,000",
+            About_how_many_people_live_in_Buenos_Aires: "3,100,000",
+            About_how_many_people_live_in_Dubai: "4,000,000",
+            About_how_many_lakes_are_in_Finland: "188,000",
+            About_how_many_active_volcanoes_are_in_Japan: "110",
+            How_many_mountains_are_over_8000_meters_tall: "14",
+            About_how_many_kilometers_long_is_the_Mississippi_River: "3730",
+        }
+        let previousQuestions = []
+
+        function getQuestion(approximateQuestions){
+            const entries = Object.entries(approximateQuestions);
+            let question = entries[Math.floor(Math.random() * entries.length)];
+            while (previousQuestions.includes(question[0]))
+            {
+                entries = Object.entries(approximateQuestions);
+                question = entries[Math.floor(Math.random() * entries.length)];
+            }
+            return question;
+        }
+        function displayQuestion(question){
+            let quest = document.querySelector("#question");
+            let asked = question[0];
+            quest.innerHTML = asked + "?";
+            
+        }
+    </script>
+    <script src="script.js"></script>
+    <footer id="footeasycap">
+        <img src="https://flagsapi.com/US/flat/64.png">
+        <img src="https://flagsapi.com/GB/flat/64.png">
+        <img src="https://flagsapi.com/BE/flat/64.png">
+        <img src="https://flagsapi.com/BR/flat/64.png">
+        <img src="https://flagsapi.com/PL/flat/64.png">
+        <img src="https://flagsapi.com/PK/flat/64.png">
+        <img src="https://flagsapi.com/RU/flat/64.png">
+        <img src="https://flagsapi.com/PH/flat/64.png">
+        <img src="https://flagsapi.com/JP/flat/64.png">
+        <img src="https://flagsapi.com/RW/flat/64.png">
+        <img src="https://flagsapi.com/SE/flat/64.png">
+        <img src="https://flagsapi.com/RS/flat/64.png">
+        <img src="https://flagsapi.com/RO/flat/64.png">
+        <img src="https://flagsapi.com/SG/flat/64.png">
+        <img src="https://flagsapi.com/KH/flat/64.png">
+        <img src="https://flagsapi.com/KR/flat/64.png">
+        <img src="https://flagsapi.com/MA/flat/64.png">
+        <img src="https://flagsapi.com/SA/flat/64.png">
+        <img src="https://flagsapi.com/KZ/flat/64.png">
+        <img src="https://flagsapi.com/LA/flat/64.png">
+        <img src="https://flagsapi.com/ZA/flat/64.png">
+    </footer>
+</html>

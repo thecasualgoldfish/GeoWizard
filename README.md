@@ -70,6 +70,8 @@ FLAG MATCH - Match the flag to the name!
 
 OUTLINE MATCH - Match the country outlines to the name!
 
+CAPITAL MATCH - Match the country capital to the name!
+
 To play each, click a card and look at the image. Click on another and use your knowledge of previous flips to discover a match. 
 Each game contains 18 cards. When you make 9 matches, you can click the 'Try Again' button, or go back to home by clicking the 'GeoWizard' button in the top left. Have fun!
 

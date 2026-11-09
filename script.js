@@ -905,7 +905,6 @@ function getRandomCountry(dictionaryflag, previousFlags)
         image = entries[Math.floor(Math.random() * entries.length)];
     }
     
-
     return image;
 }
 
