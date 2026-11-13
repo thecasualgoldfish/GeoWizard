@@ -34,10 +34,12 @@ header {
     height: 270px;
     margin-left: 10px;
     margin-right: 50px;
+    margin-top: 50px;
 }
 #flagofFrance {
     width: 446px;
     height: 270px;
+    margin-top: 50px;
     margin-left: 10px;
     margin-right: 20px;
 }
@@ -49,8 +51,9 @@ body{
 #dailygamehead, #flagpracticehead, #flagquizhead {
     margin-left: 12px
 }
-#statementquiz {
-    text-align: center;
+.statementquiz {
+    display: flex;
+    justify-content: center;
     font-size: xx-large;
 }
 .card-row {
@@ -518,13 +521,39 @@ body{
     margin-top: 82px;
 
 }
+
 #try{
     margin-bottom: 20px;
 }
+
 #sureRow {
     margin-bottom: 157px;
 }
+
 #footcapmatch {
     margin-left: 30px;
     margin-top: 30px;
+}
+
+.nav-overflow {
+    background-color: black;
+}
+
+.nav-pills {
+    background-color: black;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-item {
+    background-color: black;
+}
+
+.firstlogo {
+    margin-top: 8px;
+    margin-left: 20px;
+    margin-right: 18px;
+    color: white;
 }

@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="style.css" rel="stylesheet">
         <title id="title">
-            Hard Flag Quiz
+            Easy Flag Quiz
         </title>
-        <header class="logorow">
-            <a href="index.html" class= "link"><h4 class="logo">GeoWizard</h4></a>
-            <a href="dailygame.html" class="link">Games</a>
-            <a href="flagpractice.html" class="link">Flag Practice</a>
-            <a href="quizSelector.html" class="link">Quizzes</a>
-        </header>        
     </head>
     <body id="quiz">
-        <span class="titles">Hard Flag Quiz</span>
+         <div class="nav-overflow" data-bs-toggle="nav-overflow">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">GeoWizard</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="dailygame.html">Games</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="flagpractice.html">Flag Practice</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="quizSelector.html">Quizzes</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="settings.html">Settings</a>
+                </li>
+            </ul>
+        </div>
+        <span class="titles">Easy Flag Quiz</span>
         <div id="flags"></div>
         <div id="continue"></div>
         <form id="guessbox">
-            <label id='hint' for="guess">Which country is this?</label>
+            <label for="guess">Which country is this?</label>
             <input id="guess" type="text" required>
         </form>
         <div>
@@ -38,15 +52,15 @@
         </div>
     </body>
     <script>
-        let isHard = true;
-        let hint = true;
+        let isEasy = true;
+        let isHard = false;
+        let isMedium = false;
         let dont = false;
         let daily = false;
-        let isEasy = false;
-        let isMedium = false;
+        let hint = true;
     </script>
     <script src="script.js"></script>
-    <footer id="foothardquiz">
+    <footer id="footeasyquiz">
         <img src="https://flagsapi.com/US/flat/64.png">
         <img src="https://flagsapi.com/GB/flat/64.png">
         <img src="https://flagsapi.com/BE/flat/64.png">
