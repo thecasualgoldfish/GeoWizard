@@ -28,7 +28,7 @@
             </ul>
         </div>
         <div class="titles">Capital Quiz</div>
-        <div id="statementquiz">
+        <div class="statementquiz">
             Country or State Capitals?
         </div>
         <div class="card-row">
@@ -43,20 +43,30 @@
         </div>    
     </body>
     <script> 
-        let isEurope = false;
-        let isAsia = false;
-        let isNorthA= false;
-        let isOceania = false;
-        let dont = false;
-        let daily = false;
-        let isSouthA = false;
-        let isAfrica = false;
-        let isEasy = false;
-        let isMedium = false;
-        let isHard = false;
-        let hint = false; 
+        let theme = localStorage.getItem("theme") ?? "white";
+        let body = document.querySelector("#quiz");
+        let headers = document.querySelectorAll(".nav-pills");
+        let items = document.querySelectorAll(".nav-item");
+        let cards = document.querySelectorAll(".text-card");
+        if (theme == "black"){
+            body.style.backgroundColor = "black";
+            body.style.color = "whitesmoke";
+            headers.forEach((header) => {
+                header.style.backgroundColor = "#1e1c1c";
+            })
+            items.forEach((item) => {
+                item.style.backgroundColor = "#1e1c1c";
+            })
+            cards.forEach((card) => {
+                card.style.backgroundColor = "red";
+            })
+        }
+        else {
+            body.style.color = "black";
+            body.style.backgroundColor = "whitesmoke";
+        }
+        
     </script>
-    <script src="script.js"></script>
     <footer id="footcapital">
         <img src="https://flagsapi.com/US/flat/64.png">
         <img src="https://flagsapi.com/GB/flat/64.png">

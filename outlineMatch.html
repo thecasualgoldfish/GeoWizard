@@ -115,6 +115,32 @@
             ...mediumOutlines,
             ...hardOutlines
         }
+        
+        let theme = localStorage.getItem("theme") ?? "white";
+        let body = document.querySelector("#quiz");
+        let headers = document.querySelectorAll(".nav-pills");
+        let items = document.querySelectorAll(".nav-item");
+        let photoCards = document.querySelectorAll(".photo-card");
+        
+        if (theme == "black"){
+            body.style.backgroundColor = "black";
+            body.style.color = "whitesmoke";
+
+            headers.forEach((header) => {
+                header.style.backgroundColor = "#1e1c1c";
+            })
+            items.forEach((item) => {
+                item.style.backgroundColor = "#1e1c1c";
+            })
+            photoCards.forEach((photo) => {
+                photo.style.backgroundColor = "#1e1c1c";
+            })
+        }
+        else {
+            body.style.color = "black";
+            body.style.backgroundColor = "whitesmoke";
+        }
+
         let matched = 0;
         function shuffleArray(array) {
             const newArray = array;

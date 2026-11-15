@@ -28,7 +28,7 @@
             </ul>
         </div>
         <div class="titles">Capital Quiz</div>
-        <div id="statementquiz">
+        <div class="statementquiz">
             Pick your difficulty
         </div>
         <div class="card-row">
@@ -70,5 +70,29 @@
         <img src="https://flagsapi.com/LA/flat/64.png">
         <img src="https://flagsapi.com/ZA/flat/64.png">
     </footer>
+    <script>
+        let theme = localStorage.getItem("theme") ?? "white";
+        let body = document.querySelector("#quiz");
+        let headers = document.querySelectorAll(".nav-pills");
+        let items = document.querySelectorAll(".nav-item");
+        let cards = document.querySelectorAll(".text-card");
+        if (theme == "black") {
+            body.style.backgroundColor = "black";
+            body.style.color = "whitesmoke";
+            headers.forEach((header) => {
+                header.style.backgroundColor = "#1e1c1c";
+            })
+            items.forEach((item) => {
+                item.style.backgroundColor = "#1e1c1c";
+            })
+            cards.forEach((card) => {
+                card.style.backgroundColor = "red";
+            })
+        }
+        else {
+            body.style.color = "black";
+            body.style.backgroundColor = "whitesmoke";
+        }
+    </script>
 </html>
         

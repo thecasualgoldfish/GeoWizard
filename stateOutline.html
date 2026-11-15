@@ -64,6 +64,35 @@
         let stateOutline = true;
     </script>
     <script src="script.js"></script>
+    <script>
+        let theme = localStorage.getItem("theme") ?? "white";
+        let body = document.querySelector("#quiz");
+        let headers = document.querySelectorAll(".nav-pills");
+        let items = document.querySelectorAll(".nav-item");
+        let inputBox = document.querySelector("#guess");
+        let label = document.querySelector("#quest");
+        let stop = document.querySelector("#stop");
+        if (theme == "black"){
+            body.style.backgroundColor = "black";
+            body.style.color = "whitesmoke";
+            inputBox.style.backgroundColor = "#1e1c1c";
+            inputBox.style.color = "whitesmoke";
+            label.style.color = "whitesmoke";
+            stop.style.backgroundColor = "#1e1c1c";
+            stop.style.color = "whitesmoke";
+
+            headers.forEach((header) => {
+                header.style.backgroundColor = "#1e1c1c";
+            })
+            items.forEach((item) => {
+                item.style.backgroundColor = "#1e1c1c";
+            })
+        }
+        else {
+            body.style.color = "black";
+            body.style.backgroundColor = "whitesmoke";
+        }
+    </script>
     <footer id="footstateout">
         <img src="https://flagsapi.com/US/flat/64.png">
         <img src="https://flagsapi.com/GB/flat/64.png">

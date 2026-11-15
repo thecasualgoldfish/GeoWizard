@@ -32,7 +32,7 @@
         <div id="continue"></div>
         <form id="guessbox">
             <label id='quest' for="guess">Which country is this?</label>
-            <input id="guess" type="text" required>
+            <input id="guess" type="text" input = "required">
         </form>
         <div>
             <span id="correct">Correct!</span>
@@ -76,7 +76,31 @@
         }, 1000);
         changeCountry(allFlags, previousFlags);
     </script>
-
+    <script>
+        let theme = localStorage.getItem("theme") ?? "white";
+        let body = document.querySelector("#quiz");
+        let headers = document.querySelectorAll(".nav-pills");
+        let items = document.querySelectorAll(".nav-item");
+        let inputBox = document.querySelector("#guess");
+        let label = document.querySelector("#quest");
+        if (theme == "black"){
+            body.style.backgroundColor = "black";
+            body.style.color = "whitesmoke";
+            inputBox.style.backgroundColor = "#1e1c1c";
+            inputBox.style.color = "whitesmoke";
+            label.style.color = "whitesmoke";
+            headers.forEach((header) => {
+                header.style.backgroundColor = "#1e1c1c";
+            })
+            items.forEach((item) => {
+                item.style.backgroundColor = "#1e1c1c";
+            })
+        }
+        else {
+            body.style.color = "black";
+            body.style.backgroundColor = "whitesmoke";
+        }
+    </script>
     <footer id="footmin">
         <img src="https://flagsapi.com/US/flat/64.png">
         <img src="https://flagsapi.com/GB/flat/64.png">
