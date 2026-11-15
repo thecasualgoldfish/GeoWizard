@@ -94,6 +94,8 @@
             Wisconsin: "Madison",
             Wyoming: "Cheyenne"
         };
+        
+        
 
         function sleep(time)
         {
@@ -116,6 +118,30 @@
         let total = 0;
         const guessInput = document.querySelector("#text");
         let previousCapitals = [];
+        let theme = localStorage.getItem("theme") ?? "white";
+        let body = document.querySelector("#quiz");
+        let headers = document.querySelectorAll(".nav-pills");
+        let items = document.querySelectorAll(".nav-item");
+        let input = document.querySelector("#text");
+        if (theme == "black"){
+            body.style.backgroundColor = "black";
+            body.style.color = "whitesmoke";
+            input.style.backgroundColor = "#1e1c1c";
+            input.style.color = "whitesmoke";
+
+            headers.forEach((header) => {
+                header.style.backgroundColor = "#1e1c1c";
+            })
+            items.forEach((item) => {
+                item.style.backgroundColor = "#1e1c1c";
+            })
+    
+        }
+        else {
+            body.style.color = "black";
+            body.style.backgroundColor = "whitesmoke";
+        }
+        
 
         function changeCountryCapital(stateCapitals, previousCapitals) {
             let right = document.querySelector("#correct");

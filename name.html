@@ -223,11 +223,13 @@
             'zambia',
             'zimbabwe'
         ];
+        
 
         function changeTop(topText, letter)
         {
             topText.textContent = "Name a country starting with the letter " + letter;
         }
+        
         let topText = document.querySelector("#top-text");
         let message = document.querySelector("#message");
         let sorryMessage = document.querySelector("#sorryMessage");
@@ -238,6 +240,27 @@
         let total = 0;
         let right = false;
         let i = 65;
+        let theme = localStorage.getItem("theme") ?? "white";
+        let body = document.querySelector("#quiz");
+        let headers = document.querySelectorAll(".nav-pills");
+        let items = document.querySelectorAll(".nav-item");
+        if (theme == "black"){
+            body.style.backgroundColor = "black";
+            body.style.color = "whitesmoke";
+            input.style.color = "#1e1c1c";
+
+            headers.forEach((header) => {
+                header.style.backgroundColor = "#1e1c1c";
+            })
+            items.forEach((item) => {
+                item.style.backgroundColor = "#1e1c1c";
+            })
+    
+        }
+        else {
+            body.style.color = "black";
+            body.style.backgroundColor = "whitesmoke";
+        }
         function sleep(time)
         {
             return new Promise((resolve) => setTimeout(resolve, time));

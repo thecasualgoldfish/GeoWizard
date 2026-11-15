@@ -27,7 +27,7 @@
                 </li>
             </ul>
         </div>
-        <span class="statementquiz">Ten Second Quiz</span>
+        <span class="statementquiz">Ten Second Flag Quiz</span>
         <div id="flags"></div>
         <div id="continue"></div>
         <form id="guessbox">
@@ -74,6 +74,32 @@
             }
         }, 1000);
         changeCountry(allFlags, previousFlags);
+    </script>
+    <script>
+        let theme = localStorage.getItem("theme") ?? "white";
+        let body = document.querySelector("#quiz");
+        let headers = document.querySelectorAll(".nav-pills");
+        let items = document.querySelectorAll(".nav-item");
+        let inputBox = document.querySelector("#guess");
+        let label = document.querySelector("#quest");
+        if (theme == "black"){
+            body.style.backgroundColor = "black";
+            body.style.color = "whitesmoke";
+            inputBox.style.backgroundColor = "#1e1c1c";
+            inputBox.style.color = "whitesmoke";
+            label.style.color = "whitesmoke";
+
+            headers.forEach((header) => {
+                header.style.backgroundColor = "#1e1c1c";
+            })
+            items.forEach((item) => {
+                item.style.backgroundColor = "#1e1c1c";
+            })
+        }
+        else {
+            body.style.color = "black";
+            body.style.backgroundColor = "whitesmoke";
+        }
     </script>
     <footer id="footten">
         <img src="https://flagsapi.com/US/flat/64.png">

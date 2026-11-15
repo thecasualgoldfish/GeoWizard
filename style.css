@@ -54,7 +54,12 @@ body{
 .statementquiz {
     display: flex;
     justify-content: center;
+    align-items: center;
     font-size: xx-large;
+}
+
+#dark {
+    margin-top: 50px;
 }
 .card-row {
     display: flex;
@@ -68,15 +73,14 @@ body{
 .text-card {
     flex: 0 0 300px;
     box-sizing: border-box;
-    height: 220px;;
-    border: 1px solid #e0e0e0;
+    height: 220px;
     border-radius: 12px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     margin: 20px;
     text-align: center;
     margin-top: 30px;
     text-decoration: none;
-    background-color: red;
+    background-color: #450303;
 }
 .card-title {
     color: white;
@@ -535,17 +539,15 @@ body{
     margin-top: 30px;
 }
 
-.nav-overflow {
-    background-color: black;
-}
-
 .nav-pills {
     background-color: black;
+    
 }
 
 .nav-link {
     color: white;
 }
+
 
 .nav-item {
     background-color: black;
@@ -556,4 +558,18 @@ body{
     margin-left: 20px;
     margin-right: 18px;
     color: white;
+}
+
+#card {
+    box-sizing: border-box;
+    height: 600x;
+    width: 300px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin: 20px;
+    text-align: center;
+    margin-top: 30px;
+    text-decoration: none;
+    background-color: white;
 }
