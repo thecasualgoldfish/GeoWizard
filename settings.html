@@ -22,14 +22,15 @@
                 <li class="nav-item">
                 <a class="nav-link" href="quizSelector.html">Quizzes</a>
                 </li>
-                <li class="nav-item">
-                <a class="nav-link" href="settings.html">Settings</a>
-                </li>
             </ul>
         </div>
-        <div class="statementquiz">Settings</div>
+        <div class="titles">Settings</div>
         <div class="center">
-            <button id="dark">Click here to change to GeoWizard Dark Mode</button>
+            <div id="card">
+                <div class="center">
+                    <button id="dark">Click here to change to GeoWizard Dark Mode</button>
+                </div>
+            </div>
         </div>
     </body>
     <script>
@@ -42,8 +43,9 @@
             body.style.backgroundColor = "black";
             dark.textContent = 'Click here to change to GeoWizard Light Mode';
             body.style.color = "whitesmoke";
-            dark.style.backgroundColor = "#1e1c1c";
+            dark.style.backgroundColor = "black";
             dark.style.color = "whitesmoke";
+            card.style.backgroundColor = "#1e1c1c";
             headers.forEach((header) => {
                 header.style.backgroundColor = "#1e1c1c";
             })
@@ -71,15 +73,23 @@
                 dark.style.color = "black";
                 dark.style.backgroundColor = "whitesmoke";
                 body.style.color = "black";
+                card.style.backgroundColor = "gray";
                 localStorage.setItem("theme", "white");
             }
             else {
                 body.style.backgroundColor = "black";
                 dark.textContent = 'Click here to change to GeoWizard Light Mode';
                 body.style.color = "whitesmoke";
-                dark.style.backgroundColor = "#1e1c1c";
+                card.style.backgroundColor = "#1e1c1c";
+                dark.style.backgroundColor = "black";
                 dark.style.color = "whitesmoke";
                 localStorage.setItem("theme", "black");
+                 headers.forEach((header) => {
+                header.style.backgroundColor = "#1e1c1c";
+                })
+                items.forEach((item) => {
+                    item.style.backgroundColor = "#1e1c1c";
+                })
             }
         }
         

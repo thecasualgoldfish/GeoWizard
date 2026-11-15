@@ -7,7 +7,7 @@ Geowizard is useful to help strengthen your geography skills!
 GeoWizard was coded with HTML, CSS and JavaScript.
 
 ## WHAT CAN I DO ON GEOWIZARD?? >>
-GeoWizard contains 3 activity selections with many activities under each one! These selections include: flag practice, quizzes, and games!
+GeoWizard contains 3 activity selections with many activities under each one! These selections include: flag practice, quizzes, and games! A new dark mode has also been rolled out since November 15th!
 
 ## HOW DO I NAVIGATE THE WEBSITE? >>
 To navigate the website from the start page, click one of the selections in the top right corner. These options will bring you to further game/quiz/practice options. On any page you are also able to click the 'GeoWizard' logo in the top left of the screen to go back to the home page. 
@@ -74,6 +74,9 @@ CAPITAL MATCH - Match the country capital to the name!
 
 To play each, click a card and look at the image. Click on another and use your knowledge of previous flips to discover a match. 
 Each game contains 18 cards. When you make 9 matches, you can click the 'Try Again' button, or go back to home by clicking the 'GeoWizard' button in the top left. Have fun!
+
+## SETTINGS
+As of November 15th, GeoWizard now has a dark mode feature! To access it, go to the settings tab in the top of the screen. Then, you will see a screen labeled "Settings". As of now, the only feature available in settings is the dark mode feature. Click the button on the screen and your mode will change! No need to do anything else, if you close and reopen GeoWizard later, your changes will also save.
 
 ## OUTSIDE REFERENCES >>
 AI was used for assistance in creating certain functions in JavaScript, the dictionaries/arrays housing the flag images/country names, and minimal formatting during the creation of the website. The code was then edited and adjusted to fit intended outcome. Images are taken from various sites. AI was only used in cases where I was unable to figure out how to do something myself after multiple tries. I always attempted to solve the issue myself first.
