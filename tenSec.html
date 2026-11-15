@@ -32,7 +32,7 @@
         <div id="continue"></div>
         <form id="guessbox">
             <label id='quest' for="guess">Which country is this?</label>
-            <input id="guess" type="text" required>
+            <input id="guess" type="text" input = "required">
         </form>
         <div>
             <span id="correct">Correct!</span>
@@ -99,6 +99,12 @@
         else {
             body.style.color = "black";
             body.style.backgroundColor = "whitesmoke";
+            headers.forEach((header) => {
+                header.style.backgroundColor = "black";
+            })
+            items.forEach((item) => {
+                item.style.backgroundColor = "black";
+            })
         }
     </script>
     <footer id="footten">

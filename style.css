@@ -13,9 +13,11 @@ header {
     background-color: black;
 }
 #statement1 {
+    font-size: x-large;
     margin-bottom: 10px;
     margin-top: 10px;
     margin-left: 20px;
+    
 }
 .link {
     text-decoration: none;
@@ -572,4 +574,16 @@ body{
     margin-top: 30px;
     text-decoration: none;
     background-color: white;
+}
+
+#hintButton {
+    margin-bottom: 20px;
+}
+
+#stop {
+    margin-bottom: 15px;
+}
+
+.titles {
+    margin-top: 10px;
 }

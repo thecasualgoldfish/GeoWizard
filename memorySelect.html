@@ -30,7 +30,7 @@
         <div class="statementquiz">
             Memory Match Selector
         </div>
-        <p class="text">Which memory match would you like to play?</p>
+        <p class="statementquiz">Which memory match would you like to play?</p>
         <div class="card-row">
             <a href="flagMatch.html" id="hardcard" class="text-card">
                 <h1 class="card-title">Flag Match</h1>
@@ -74,6 +74,15 @@
         else {
             body.style.color = "black";
             body.style.backgroundColor = "whitesmoke";
+            headers.forEach((header) => {
+                header.style.backgroundColor = "black";
+            })
+            items.forEach((item) => {
+                item.style.backgroundColor = "black";
+            })
+            cards.forEach((card) => {
+                card.style.backgroundColor = "red";
+            })
         }
     </script>
     <footer id="footmemoryselect">
