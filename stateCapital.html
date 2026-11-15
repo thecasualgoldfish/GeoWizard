@@ -27,10 +27,10 @@
                 </li>
             </ul>
         </div>
-        <div class="statementquiz">State Capitals Quiz</div>
-        <div id="top-text" class ='center'></div>
+        <div class="titles">State Capitals Quiz</div>
+        <div id="top-text" class='center'></div>
         <form id="text-box">
-            <input id = 'text' type="text">
+            <input id='text' type="text">
         </form>
         <div id = "correct" class = 'center'>Correct!</div>
         <div id="sorryMessage" class="center"></div>
@@ -123,11 +123,14 @@
         let headers = document.querySelectorAll(".nav-pills");
         let items = document.querySelectorAll(".nav-item");
         let input = document.querySelector("#text");
+        let stop = document.querySelector("#stop");
         if (theme == "black"){
             body.style.backgroundColor = "black";
             body.style.color = "whitesmoke";
             input.style.backgroundColor = "#1e1c1c";
             input.style.color = "whitesmoke";
+            stop.style.backgroundColor = "#1e1c1c";
+            stop.style.color = "whitesmoke";
 
             headers.forEach((header) => {
                 header.style.backgroundColor = "#1e1c1c";
