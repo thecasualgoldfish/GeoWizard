@@ -313,6 +313,12 @@
         else {
             body.style.color = "black";
             body.style.backgroundColor = "whitesmoke";
+            headers.forEach((header) => {
+                header.style.backgroundColor = "black";
+            })
+            items.forEach((item) => {
+                item.style.backgroundColor = "black";
+            })
         }
 
         let matched = 0;
@@ -364,6 +370,14 @@
                     card.appendChild(text);
                 }
             });
+            
+            let text = document.querySelectorAll(".card-text");
+            let mode = localStorage.getItem("theme");
+            if (mode == "black"){
+                text.forEach((word) => {
+                    word.style.color = "whitesmoke";
+                })
+            }
 
             document.querySelectorAll(".photo-card").forEach(card => {
                 card.addEventListener("click", () => onCardClick(card));

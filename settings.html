@@ -52,8 +52,14 @@
             })
         }
         else {
-            body.style.backgroundColor = "whitesmoke";
             body.style.color = "black";
+            body.style.backgroundColor = "whitesmoke";
+            headers.forEach((header) => {
+                header.style.backgroundColor = "black";
+            })
+            items.forEach((item) => {
+                item.style.backgroundColor = "black";
+            })
             dark.textContent = "Click here to change to GeoWizard Dark Mode";
         }
 

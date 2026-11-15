@@ -247,7 +247,8 @@
         if (theme == "black"){
             body.style.backgroundColor = "black";
             body.style.color = "whitesmoke";
-            input.style.color = "#1e1c1c";
+            input.style.backgroundColor = "#1e1c1c";
+            input.style.color = "whitesmoke";
 
             headers.forEach((header) => {
                 header.style.backgroundColor = "#1e1c1c";
@@ -260,6 +261,12 @@
         else {
             body.style.color = "black";
             body.style.backgroundColor = "whitesmoke";
+            headers.forEach((header) => {
+                header.style.backgroundColor = "black";
+            })
+            items.forEach((item) => {
+                item.style.backgroundColor = "black";
+            })
         }
         function sleep(time)
         {

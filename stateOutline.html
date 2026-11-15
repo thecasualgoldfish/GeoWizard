@@ -31,7 +31,7 @@
         <div id="flags"></div>
         <div id="continue"></div>
         <form id="guessbox">
-            <label id='hint' for="guess">Which state is this?</label>
+            <label id='quest' for="guess">Which state is this?</label>
             <input id="guess" type="text" required>
         </form>
         <div>
@@ -58,6 +58,7 @@
         let daily = false;
         let isMedium = false;
         let isHard = false; 
+        let hint = false;
         let easyOutline = false;
         let hardOutline = false;
         let mediumOutline = false;
@@ -80,7 +81,6 @@
             label.style.color = "whitesmoke";
             stop.style.backgroundColor = "#1e1c1c";
             stop.style.color = "whitesmoke";
-
             headers.forEach((header) => {
                 header.style.backgroundColor = "#1e1c1c";
             })
@@ -91,6 +91,12 @@
         else {
             body.style.color = "black";
             body.style.backgroundColor = "whitesmoke";
+            headers.forEach((header) => {
+                header.style.backgroundColor = "black";
+            })
+            items.forEach((item) => {
+                item.style.backgroundColor = "black";
+            })
         }
     </script>
     <footer id="footstateout">

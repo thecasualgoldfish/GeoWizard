@@ -32,7 +32,7 @@
         <div id="continue"></div>
         <form id="guessbox">
             <label id='quest' for="guess">Which country is this?</label>
-            <input id="guess" type="text" required>
+            <input id="guess" type="text" input = "required">
         </form>
         <div>
             <span id="correct">Correct!</span>
@@ -41,14 +41,14 @@
             <span id="sorry">Incorrect</span>
         </div>
 
-        <div id = 'timer' class="center"></div>
+        <div id='timer' class="center"></div>
         <div id="current" class='center'></div>
     </body>
     <script> 
         let isEurope = false;
         let isAsia = false;
         let hint = false;
-        let isNorthA= false;
+        let isNorthA = false;
         let isOceania = false;
         let isSouthA = true;
         let isAfrica = false;
@@ -89,7 +89,6 @@
             inputBox.style.backgroundColor = "#1e1c1c";
             inputBox.style.color = "whitesmoke";
             label.style.color = "whitesmoke";
-
             headers.forEach((header) => {
                 header.style.backgroundColor = "#1e1c1c";
             })
@@ -100,6 +99,12 @@
         else {
             body.style.color = "black";
             body.style.backgroundColor = "whitesmoke";
+            headers.forEach((header) => {
+                header.style.backgroundColor = "black";
+            })
+            items.forEach((item) => {
+                item.style.backgroundColor = "black";
+            })
         }
     </script>
     <footer id="footthirty">

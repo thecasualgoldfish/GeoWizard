@@ -484,6 +484,7 @@
             }
             function createRow(wordSpace)
             {
+                let mode = localStorage.getItem("theme");
                 const inputRow = document.querySelector("#input-row");
                 let card;
                 let block;
@@ -499,7 +500,7 @@
                         card.className = 'letter-box';
                         blocks.push(card);
                         nextRow.appendChild(card);   
-                    } 
+                    }
                     else
                     {
                         card = document.createElement("div");
@@ -509,6 +510,14 @@
                     }
                 }
                 inputRow.appendChild(nextRow);
+                if (mode == "black") {
+                    blocks.forEach((block) => {
+                        block.style.backgroundColor = "#1e1c1c"
+                    })
+                    space.forEach((spacer) => {
+                        spacer.style.backgroundColor = "black";
+                    })
+                }
                 return blocks;
             }
             function inputBox(blocks, name, word, input, round, message, hint, sorry, congrats, wordSpace, messagelength)
@@ -724,6 +733,44 @@
             input.minLength = word.length;
             input.required = 'true';
             input.autocomplete = 'off';
+            let theme = localStorage.getItem("theme") ?? "white";
+            let body = document.querySelector("#quiz");
+            let headers = document.querySelectorAll(".nav-pills");
+            let items = document.querySelectorAll(".nav-item");
+            let quit = document.querySelector("#quitButton");
+            if (theme == "black"){
+                body.style.backgroundColor = "black";
+                body.style.color = "whitesmoke";
+                input.style.backgroundColor = "#1e1c1c";
+                hintButton.style.backgroundColor = "#1e1c1c";
+                hintButton.style.color = "whitesmoke";
+                yes.style.backgroundColor = "#1e1c1c";
+                yes.style.color = "whitesmoke";
+                no.style.backgroundColor = "#1e1c1c";
+                no.style.color = "whitesmoke";
+                quit.style.backgroundColor = "#1e1c1c";
+                quit.style.color = "whitesmoke";
+                tryAgain.style.backgroundColor = "#1e1c1c";
+                tryAgain.style.color = "whitesmoke";
+
+                headers.forEach((header) => {
+                    header.style.backgroundColor = "#1e1c1c";
+                })
+                items.forEach((item) => {
+                    item.style.backgroundColor = "#1e1c1c";
+                })
+
+            }
+            else {
+                body.style.color = "black";
+                body.style.backgroundColor = "whitesmoke";
+                headers.forEach((header) => {
+                    header.style.backgroundColor = "black";
+                })
+                items.forEach((item) => {
+                    item.style.backgroundColor = "black";
+                })
+            }
             form.appendChild(input);
             newRow.appendChild(form);
             inputBox(blocks, name, word, input, 0, message, hint, sorry, congrats, wordSpace, messagelength);
@@ -744,28 +791,6 @@
         let daily = false;
     </script>
     <script src="script.js"></script>
-    <script>
-        let theme = localStorage.getItem("theme") ?? "white";
-        let body = document.querySelector("#quiz");
-        let headers = document.querySelectorAll(".nav-pills");
-        let items = document.querySelectorAll(".nav-item");
-        
-        if (theme == "black"){
-            body.style.backgroundColor = "black";
-            body.style.color = "whitesmoke";
-
-            headers.forEach((header) => {
-                header.style.backgroundColor = "#1e1c1c";
-            })
-            items.forEach((item) => {
-                item.style.backgroundColor = "#1e1c1c";
-            })
-        }
-        else {
-            body.style.color = "black";
-            body.style.backgroundColor = "whitesmoke";
-        }
-    </script>
     <footer id="footcountrynam">
         <img src="https://flagsapi.com/US/flat/64.png">
         <img src="https://flagsapi.com/GB/flat/64.png">
